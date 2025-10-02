@@ -43,7 +43,7 @@
 - [x] Patrick Hunt
 - [x] Nathan Khazam
 
-## 9/17/2025 TA
+## 9/20/2025 TA
 - [x] Axel VandenHeuvel
 - [x] Jerry Li
 - [x] Parker Secrest
@@ -78,5 +78,6 @@
 - [x] Kaile Suoo
 - [x] Patrick Hunt
 - [x] Nathan Khazam
+
 
 

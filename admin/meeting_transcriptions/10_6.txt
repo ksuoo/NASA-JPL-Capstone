@@ -1,0 +1,846 @@
+[jerry] 13:00:50
+We know. I actually don't know.
+
+[Axel Vandenheuvel] 13:00:51
+Oh, someone did it.
+
+[jerry] 13:00:55
+Okay. Yeah, I think so.
+
+[Kaile Suoo] 13:00:57
+Is it working? Okay.
+
+[peyton] 13:01:01
+Just make sure to save it afterwards, yeah.
+
+[jerry] 13:01:01
+Do you know how to, like, save it?
+
+[Kaile Suoo] 13:01:03
+Yeah, wait, um, who's, like, Peyton, did you do it at one time?
+
+[Kaile Suoo] 13:01:07
+How do you, like, do, like, save transcript?
+
+[peyton] 13:01:11
+Do you see, like, the transcript?
+
+[peyton] 13:01:13
+It should be at, like, the bottom, yeah.
+
+[Kaile Suoo] 13:01:13
+Oh, at the bottom? Okay, so I just gotta hit bottom, like, to save before I leave, alright.
+
+[jerry] 13:01:22
+Sounds good.
+
+[jerry] 13:01:27
+Do we have anything? To update for him.
+
+[Patrick Hunt] 13:01:32
+I think we could… I think we should ask him about a potential format for the…
+
+[Axel Vandenheuvel] 13:01:33
+I don't think so, question-wise. I think we're on the right track right now, right?
+
+[Kaile Suoo] 13:01:37
+Yeah.
+
+[Patrick Hunt] 13:01:41
+Status report that's gonna be due.
+
+[Axel Vandenheuvel] 13:01:41
+That's right, that's right, I forgot about that.
+
+[Kaile Suoo] 13:01:44
+Okay. Yeah.
+
+[Parker] 13:01:45
+And we got a pie, right?
+
+[jerry] 13:01:50
+Oh…
+
+[Parker] 13:01:50
+High five.
+
+[Axel Vandenheuvel] 13:01:53
+All the stuff on it, guys. The whole thing.
+
+[Parker] 13:01:56
+Holy… Let's go, let's gas.
+
+[Axel Vandenheuvel] 13:02:00
+Only a 2-hour chunk out of my day. Oh my god.
+
+[jerry] 13:02:08
+I still haven't heard anything from Alan, so… Maybe he just ghosted me.
+
+[Axel Vandenheuvel] 13:02:15
+I already got the, uh… I guess I haven't… I haven't connected it to my… laptop yet, because I don't have, like, a…
+
+[Axel Vandenheuvel] 13:02:25
+Um… What am I talking about? It's like I just use this.
+
+[Axel Vandenheuvel] 13:02:31
+Honestly, I don't have a USB-C to USB-C cable, but I'm literally using one to plug into my computer right now.
+
+[Axel Vandenheuvel] 13:02:38
+Um, yeah, never mind. I'll get that tonight.
+
+[Kaile Suoo] 13:02:41
+Why do you email us?
+
+[Kaile Suoo] 13:02:48
+Oh, he said it'll just be late, alright.
+
+[jerry] 13:02:50
+Yeah, yeah, just a few minutes.
+
+[jerry] 13:02:56
+Oh, we need them to sign the… the charter thingy.
+
+[Kaile Suoo] 13:02:59
+Yeah, no, I, like, I got the link, and then I changed it to everyone can edit, so he'll just sign it, like, I'll just have him.
+
+[jerry] 13:03:04
+Okay. Yeah, yeah, that's true, yeah.
+
+[Kaile Suoo] 13:03:05
+Click the button, hopefully.
+
+[Parker] 13:03:06
+Realistically. If he approves it, can we not just put in his initials and send it? Like, I don't… does it matter?
+
+[jerry] 13:03:14
+That's true.
+
+[Parker] 13:03:15
+I don't think it really matters, so… As long as he approves it.
+
+[jerry] 13:03:25
+How's, um, how's everyone's research going?
+
+[Axel Vandenheuvel] 13:03:30
+I'm pretty good. I have a good amount down for the whole CLI, uh, thing.
+
+[jerry] 13:03:33
+Oh, really?
+
+[Axel Vandenheuvel] 13:03:33
+I just need to, like, practice, like, implementing it to see if… I can get it to work or not, um…
+
+[Axel Vandenheuvel] 13:03:40
+Honestly, I haven't touched any of the other VLMs yet. I haven't done any of that.
+
+[jerry] 13:03:41
+That's good. Yeah, that's fine. Um, I think…
+
+[jerry] 13:03:47
+We're gonna look… like, we're gonna go over them, uh, again, anyway, in the second semester, so… It's not a big toy right now.
+
+[Axel Vandenheuvel] 13:03:55
+Yeah. Did anyone find any of the alums that were, were, um… I know someone edited a doc, and I honestly haven't looked at it yet.
+
+[Axel Vandenheuvel] 13:04:05
+That were accurate, I guess. Past what I found.
+
+[Patrick Hunt] 13:04:12
+Uh… Moondream seems to work pretty well. Um, and then… I had a 4 billion parameter Gemma…
+
+[Patrick Hunt] 13:04:23
+Running, and that one was pretty nice. It just didn't, um… I don't think it would run very well on the Raspberry Pi.
+
+[Axel Vandenheuvel] 13:04:32
+Yeah, how many, how many, how much RAM do you need for the 4 billion parameter one? Did it say?
+
+[Patrick Hunt] 13:04:32
+Um, not… Specifically, but I would guess at least…
+
+[jerry] 13:04:40
+I think… I think he was saying, like, uh, for, like, 7 billion parameters, you need… at least 8GB.
+
+[Axel Vandenheuvel] 13:04:48
+Oh, okay. You find that, yeah.
+
+[Patrick Hunt] 13:04:48
+That sounds right, yeah.
+
+[jerry] 13:04:49
+From my memory, so… Yeah, so I wish… yeah. So it should run, hopefully.
+
+[Axel Vandenheuvel] 13:04:55
+Okay. I know there's, like, a list, like, on Olama's site. I don't know if it's… the RAM usage, or what, but…
+
+[Patrick Hunt] 13:05:03
+Hey, Marcel. How's it going?
+
+[Marcel (JPL)] 13:05:06
+Okay. I like the conversation you were having.
+
+[Patrick Hunt] 13:05:12
+Oh. Yeah, we were just talking about some DLMs we were testing out.
+
+[Marcel (JPL)] 13:05:21
+Well, the one that I like is Gemma. Um, that one…
+
+[Marcel (JPL)] 13:05:28
+Um, so I don't know how much you know about VLMs, but VLMs, what they do is the training.
+
+[Marcel (JPL)] 13:05:34
+Process that they used is it merges. The vector information coming from the actual pixel data.
+
+[Marcel (JPL)] 13:05:42
+With, uh, so… so there are two types of space on… on the different types of LLMs, right? There is… there are… There's a text space for LLMs, and then there is the image space for VLMs.
+
+[Marcel (JPL)] 13:05:54
+But Gemma blends those two well, so if you have something that.
+
+[Marcel (JPL)] 13:05:58
+You know, shows a cat in one image. That space representing a cat on images will be very close or fully overlapping the word cat.
+
+[Marcel (JPL)] 13:06:08
+Or feline, you know? So there's, like, a Venn diagram of those different concepts as they… represented through different modalities, right?
+
+[Marcel (JPL)] 13:06:16
+So, Gemma does a really good job at mapping those two, and also reasoning over.
+
+[Marcel (JPL)] 13:06:22
+Uh, images. Um, actually, I've run a few tests, um. Uh, on my computer.
+
+[Marcel (JPL)] 13:06:32
+Um, trying to implement a Mars geologist. On board the spacecraft. So if we have a Mars rover.
+
+[Marcel (JPL)] 13:06:38
+And it gets images from… from Mars. Can you tell us, like, what it sees, and whether there is water, or in, you know, like, a science of.
+
+[Marcel (JPL)] 13:06:48
+Ancient water… Or things like that, so it could… it's a way for you to be able to, if you have a goal with a spacecraft, which is for.
+
+[Marcel (JPL)] 13:06:57
+You know, one of them could be… Uh, are there any signs of inching water on Mars? Then, uh, it can…
+
+[Marcel (JPL)] 13:07:04
+Provide you with that information as you move through the surface, and it actually gives you really good information.
+
+[Marcel (JPL)] 13:07:11
+The geologists, uh… might miss.
+
+[Marcel (JPL)] 13:07:15
+So… I've been using Gemma for that, and it's been really good.
+
+[Axel Vandenheuvel] 13:07:24
+Yeah, Jemma's one of the models that we've… we've been… been playing around with, uh, as our… as our list expands for the possible VLMs we're gonna use.
+
+[Axel Vandenheuvel] 13:07:34
+Um, something we tried were… I guess in my… experience, uh, didn't do a very accurate job of describing.
+
+[Axel Vandenheuvel] 13:07:42
+So, we've, uh, we've caught some out as well.
+
+[Marcel (JPL)] 13:07:49
+Yeah, one day I should give you a demo of the things that I've been doing as experiments.
+
+[Marcel (JPL)] 13:07:54
+Um, not today, because I don't think that I'm ready. Um, but yeah, I think in a future meeting, I should show you that maybe in the next one, if we have time.
+
+[Marcel (JPL)] 13:08:20
+Okay, so… What do you have for me today?
+
+[Kaile Suoo] 13:08:25
+Um, okay, so we started… I guess we didn't start, but we finished the project harder.
+
+[Kaile Suoo] 13:08:30
+Um, we made all the changes that we talked about last week, so… Um, I think?
+
+[Kaile Suoo] 13:08:36
+The only thing that we have to do is for you to… I guess look over it one more time, and then fill out the approval category.
+
+[Kaile Suoo] 13:08:45
+So… I'll probably link it here. Can you, like, see that? Are you allowed to open that?
+
+[Marcel (JPL)] 13:08:52
+Yeah.
+
+[Kaile Suoo] 13:08:53
+And then we made all the changes, so… Just want to give, like, a quick look through, and then…
+
+[Kaile Suoo] 13:08:59
+There's just one area at the top.
+
+[Marcel (JPL)] 13:09:03
+Can one of you share the screen so this way we all look at the same?
+
+[Kaile Suoo] 13:09:06
+Yeah.
+
+[Kaile Suoo] 13:09:14
+Can you see? Okay, so…
+
+[Marcel (JPL)] 13:09:16
+Yeah.
+
+[Kaile Suoo] 13:09:19
+Uh, this is just the area where you'd fill it out.
+
+[Kaile Suoo] 13:09:23
+But I think… okay, where did we talk about? Was there anything here?
+
+[Marcel (JPL)] 13:09:33
+I don't remember.
+
+[jerry] 13:09:34
+No, I don't think so. There is a… there is a section for, like, oh, there is a second paragraph of horrible name.
+
+[Axel Vandenheuvel] 13:09:35
+It's where we discussed.
+
+[Kaile Suoo] 13:09:38
+Quick here, right? I think we fixed this one, right?
+
+[jerry] 13:09:43
+A sentence above it.
+
+[Patrick Hunt] 13:09:44
+It was… we just revised some language so that it said.
+
+[Patrick Hunt] 13:09:49
+Uh… we need to optimize. Vlms running on, like, single-board computers as opposed to their…
+
+[Patrick Hunt] 13:09:54
+Uh, or whatever sentence we had before that. I think it was saying that, uh.
+
+[Kaile Suoo] 13:09:58
+Right.
+
+[Axel Vandenheuvel] 13:10:01
+Larger, complicated or something?
+
+[Patrick Hunt] 13:10:03
+Yeah.
+
+[jerry] 13:10:14
+Yeah, that was the only change on there.
+
+[Marcel (JPL)] 13:10:19
+Well, um… And I think that, you know, maybe what I'll do is, um…
+
+[Marcel (JPL)] 13:10:25
+If we finish early, then I'm gonna go through the document, I'm gonna give you a thumbs up. I don't think that we need to go through all of it.
+
+[Marcel (JPL)] 13:10:31
+Right now. Um… well, unless we have time now, then if you guys want me to wait and read the whole thing, I can do it today, too.
+
+[Marcel (JPL)] 13:10:41
+I mean, right now. Um, are there any other topics that you wanted to cover today?
+
+[Kaile Suoo] 13:10:46
+Oh, yeah, so… Um, maybe this isn't the most… readable like this, but, um, this is a project status report that our professor's having us do.
+
+[Kaile Suoo] 13:10:58
+And this is the template he gave us. So I guess I can actually…
+
+[Axel Vandenheuvel] 13:11:05
+You can just full screen it on Canvas, too.
+
+[Kaile Suoo] 13:11:10
+Open it real quick.
+
+[Kaile Suoo] 13:11:17
+Yeah, so… Um, kind of went through it real quick, but…
+
+[Kaile Suoo] 13:11:23
+Yeah, this is basically what he wants us to do. Let me just, like, a quick scroll through, but…
+
+[Kaile Suoo] 13:11:30
+Um, yeah, so I think this is due, like, every week or two.
+
+[Kaile Suoo] 13:11:34
+And this is a template they provided. I guess this is, like, any specific… Um, like, parts you want us to…
+
+[Marcel (JPL)] 13:11:40
+And that's something you guys need to do every week?
+
+[Kaile Suoo] 13:11:43
+I think it was every week.
+
+[Patrick Hunt] 13:11:44
+Yeah, it's weekly. Uh, we just kind of wanted to run by… run this template by you, because, uh… We do need sponsor approval for it.
+
+[Patrick Hunt] 13:11:52
+And we just wanted to make sure there wasn't any… Um, maybe some, like, niche category that's unique to the project that you want us to include that we wouldn't know about without.
+
+[Patrick Hunt] 13:12:02
+Talking to you first.
+
+[Marcel (JPL)] 13:12:04
+Well, I think that the bigger question that I have is, um, how do you know that the project is doing well, unless you have a project schedule?
+
+[Marcel (JPL)] 13:12:10
+Right, so, um, I think that you need to have a project schedule with milestones, and ideally you have a… ideally you have a Gantt chart.
+
+[Marcel (JPL)] 13:12:19
+Right? That shows that, you know… so that's just a table. What I'm saying is something that shows.
+
+[Marcel (JPL)] 13:12:24
+Uh, the main tasks, and when do they start, and which ones do they depend on, and all of those things. So ideally.
+
+[Marcel (JPL)] 13:12:31
+You know, for every year, what the team has done is create a Gantt chart.
+
+[Marcel (JPL)] 13:12:36
+That they, uh, that they used to know. Who is waiting on what from somebody else?
+
+[Marcel (JPL)] 13:12:43
+And also shows the main, uh, milestones in it, so that we all know.
+
+[Marcel (JPL)] 13:12:48
+If you're behind on something, what do you guys need to crush, uh, to help with?
+
+[Marcel (JPL)] 13:12:55
+Um, so the table is fine for the charter. But after that, I think that you need to come up with a hand chart that shows main tasks that you're planning, and by the way, the tasks right now, the granularity of the tasks will be very coarse.
+
+[Marcel (JPL)] 13:13:09
+But as you start working on those tasks, then each line in the Gantt chart will have to maybe, uh.
+
+[Marcel (JPL)] 13:13:15
+Be, um, you know, separated into 3 or 4 subtasks, right?
+
+[Marcel (JPL)] 13:13:20
+So, I would recommend that you. Create a Gantt chart and follow that.
+
+[Marcel (JPL)] 13:13:27
+And it's something that you can update, right? And it… but it's going to show you the risks that you're running into when going through the project.
+
+[Marcel (JPL)] 13:13:35
+It also is going to inform also the weekly updates. It's again, TT.
+
+[Kaile Suoo] 13:13:38
+Like this, this one? Again, this chart. Yeah, okay.
+
+[Kaile Suoo] 13:13:44
+And then we can just fill that out, like, here. Um, I haven't looked at them in the past, but…
+
+[Marcel (JPL)] 13:13:45
+I mean, you know what I'm talking about, right? Like, a Gantt chart?
+
+[Marcel (JPL)] 13:13:53
+Gantt chart is just, like, a few, like, rows that show the length of tasks, and then the columns are, like, the months or the weeks, right?
+
+[Kaile Suoo] 13:14:04
+Yes, okay.
+
+[Marcel (JPL)] 13:14:05
+I mean, it's really easy, right? So that one is a good example. Go back to that one.
+
+[Marcel (JPL)] 13:14:11
+So, see, that one on the right side, the blue one, right? It shows, like, a master… so, like, a high-level task, which is planning.
+
+[Marcel (JPL)] 13:14:19
+Then he has subtasks, set up teams, set a budget. Prepare a launch plan, right?
+
+[Marcel (JPL)] 13:14:24
+And then you have the packaging done by Henry. Uh, which is something you need to work on marketing. I'm not really sure why, but…
+
+[Marcel (JPL)] 13:14:34
+So this packaging… when packaging ends and there's marketing starting, right?
+
+[Marcel (JPL)] 13:14:38
+But then sales can start as you are going through the marketing, right? So… There are tasks that have a precedence to each other. Like, in this case, you know, uh…
+
+[Marcel (JPL)] 13:14:49
+Packaging proceeds, marketing. Um, but there are other ones that do not, right? You have, like, for example, sales that starts in the middle of marketing.
+
+[Marcel (JPL)] 13:14:59
+Um, and maybe need something from the… from the brief within marketing to be able to… to begin, right?
+
+[Marcel (JPL)] 13:15:05
+So, so just an example, but it's a good example because it shows you that you can subdivide high-level tasks into subtasks, and also the precedence and.
+
+[Marcel (JPL)] 13:15:14
+You know, the non-precedent of some tasks. Um, you can do that with Excel, right? It doesn't need to be elaborate like this.
+
+[Marcel (JPL)] 13:15:23
+Um, there are many tools online that help you create Gantt charts. You just enter the dates of tasks, and then it visualizes them.
+
+[Marcel (JPL)] 13:15:31
+But there are also ways to do it with Excel, or Google.
+
+[Marcel (JPL)] 13:15:35
+Sheets.
+
+[Kaile Suoo] 13:15:37
+Okay.
+
+[Kaile Suoo] 13:15:43
+So that would probably…
+
+[Marcel (JPL)] 13:15:45
+And I think it would be good if you have, like, a visualization of the Gantt chart in one of these sections here.
+
+[Marcel (JPL)] 13:15:51
+And by the way, you don't need to, but I think the Gantt chart is gonna be a good way for you to know if you're on track, and then, hence, be able to fill out the report.
+
+[Kaile Suoo] 13:16:01
+I mean, we could probably just replace this with the Gantt chart, right?
+
+[Marcel (JPL)] 13:16:06
+Yeah, or a link, or a link. Put a link to it, right? You might be using a service that creates a Gantt chart and keeps a link to it, so everybody can see the most up-to-date info.
+
+[Kaile Suoo] 13:16:08
+Relatively similar. Yeah.
+
+[Kaile Suoo] 13:16:17
+Okay.
+
+[Kaile Suoo] 13:16:22
+Change requests… performance indicators. And then, I think…
+
+[Kaile Suoo] 13:16:29
+A Gantt chart would cover, like, the majority of it, we just need to, like, write stuff out.
+
+[Kaile Suoo] 13:16:33
+But yeah.
+
+[Marcel (JPL)] 13:16:34
+Yeah, so if you wanted to do it in a more NASA way, there are something called the monthly management reviews.
+
+[Marcel (JPL)] 13:16:42
+Just… you don't need to do it, but there are something called monthly management reviews within NASA, and there is a very specific.
+
+[Marcel (JPL)] 13:16:52
+Uh, way to do them. Um, with… with slides, and it shows, like, the grace. Anyway, so if you want to know more about that, I'll tell you. I don't think that I need to go through all of that right now.
+
+[Marcel (JPL)] 13:17:04
+But if you wanted to adhere to a more NASA-like, uh, kind of reporting of status, then you would do that, but I think that what you're showing me right now is completely fine.
+
+[Kaile Suoo] 13:17:13
+Okay.
+
+[Kaile Suoo] 13:17:21
+And then, did anyone else have, like, any other topics to bring up?
+
+[Axel Vandenheuvel] 13:17:28
+Oh, I don't think so for the most part. We've just been… Um, moving along with the first portion of it, we've acquired the…
+
+[Axel Vandenheuvel] 13:17:36
+The pie with… Um… the needed… the needed specs is the… the biggest one. We'll be testing… testing it on.
+
+[Axel Vandenheuvel] 13:17:47
+And right now, we're just, like we said earlier, looking at VLMs and.
+
+[Axel Vandenheuvel] 13:17:51
+Researching how to, uh, create the, uh. Uh, the CLI tool for…
+
+[Axel Vandenheuvel] 13:17:58
+Yeah, for Olama right now.
+
+[Marcel (JPL)] 13:18:00
+Did I hear that you guys have the hardware?
+
+[Axel Vandenheuvel] 13:18:02
+Yeah, yeah, I got the… we got the newest Pi. Yeah.
+
+[Marcel (JPL)] 13:18:06
+Oh, that's a Pi5? With 16GB of RAM?
+
+[Axel Vandenheuvel] 13:18:10
+Yeah.
+
+[Marcel (JPL)] 13:18:11
+Oh, excellent. Good job, guys. Um… So, um, who's gonna… you only have one. Who's gonna run it? Is it gonna be you, Axel?
+
+[Axel Vandenheuvel] 13:18:22
+For now, I guess, yeah.
+
+[Marcel (JPL)] 13:18:24
+One thing you can do is, depending on how you guys break up the work.
+
+[Marcel (JPL)] 13:18:29
+You can give SSH access to it to the other team members if you figure out how to do it.
+
+[Axel Vandenheuvel] 13:18:34
+Yeah, I've seen that. I set it up originally with just… it's just, I'm using the… I use the Raspberry Pi image or whatever, I don't know if I have to edit that, but that's what I used originally.
+
+[Axel Vandenheuvel] 13:18:46
+Um, I'm sure that's something we'll be able to figure out.
+
+[Marcel (JPL)] 13:18:49
+Yeah, I mean, there are many ways to do that, but if you… the easiest one, if you have a way to, um… hook up the Raspberry Pi to your router.
+
+[Marcel (JPL)] 13:18:59
+And then the Eeyore ISP gives you… access to the internet through, uh, a set IP.
+
+[Marcel (JPL)] 13:19:07
+Then you can map from the router to the… to the Raspberry Pi. You can do port mapping, and then open the SSH port to it, and then everybody can log into it.
+
+[Marcel (JPL)] 13:19:16
+But that's… I'll let you guys figure that out one now.
+
+[Axel Vandenheuvel] 13:19:18
+Okay. Yeah, I'm sure that's something we can do.
+
+[Axel Vandenheuvel] 13:19:24
+I'll be able to set it up using that, I think.
+
+[Marcel (JPL)] 13:19:24
+Yeah.
+
+[Marcel (JPL)] 13:19:30
+There are other ways to… work around, you know, if you have complications, and there is something called Hamachi, which is, like, creating, like, a…
+
+[Marcel (JPL)] 13:19:39
+Like a… like a… an invitation-only VPN across the team members, so if you have, like, so many team members, then you invite them.
+
+[Marcel (JPL)] 13:19:49
+To your, um… the internet via VPN, which is only composed of the few of you.
+
+[Marcel (JPL)] 13:19:59
+Um… So if you want to talk more about that, we can discuss another time, but, um…
+
+[Marcel (JPL)] 13:20:06
+It also depends on how you want to apportion tasks. Uh, within the team.
+
+[Marcel (JPL)] 13:20:12
+There are going to be maybe some team members that, even though they work on the hardware, they might not need the… the best Raspberry Pi, and they can make do with the other ones.
+
+[Axel Vandenheuvel] 13:20:23
+Okay.
+
+[Marcel (JPL)] 13:20:31
+Okay, so… Since we have time, do you mind if I go over the document?
+
+[Kaile Suoo] 13:20:40
+Oh, yeah, that sounds good.
+
+[Marcel (JPL)] 13:20:41
+Okay, then give me a few minutes here.
+
+[Marcel (JPL)] 13:21:48
+I made a change. I don't know if you saw it, but I made a change to… Um, I'm highlighting it.
+
+[Kaile Suoo] 13:21:55
+Okay, yeah, the provided prompts, right? Okay.
+
+[Marcel (JPL)] 13:21:57
+Yep.
+
+[Marcel (JPL)] 13:22:38
+I'm gonna say here, LLM… LLMs, VLMs, because… ALMs are a subset of VLMs.
+
+[Marcel (JPL)] 13:22:48
+So where they were… yeah, that's actually a good point. So, we're talking about VLMs everywhere.
+
+[Marcel (JPL)] 13:22:55
+Um, because we want to be able to ask questions about images, but your framework should also support LLMs, because it's just a subset. So if you don't pass any image.
+
+[Marcel (JPL)] 13:23:05
+Then you're just, like, talking to the VLM as if it were an LLM, right?
+
+[Marcel (JPL)] 13:23:10
+So Gemma is an… is an LLM-VLM model. You can… you can optionally pass images to it.
+
+[Marcel (JPL)] 13:23:18
+But if you don't pass any images, it just operates like a normal LLM, right?
+
+[Marcel (JPL)] 13:23:23
+So ideally, you don't have to do anything, but if you pass an image, then you have to convert that image into a format that.
+
+[Marcel (JPL)] 13:23:29
+Gemma will understand, or whatever model we use will understand. If you don't pass any image, then you're just passing a prompt, and you get a…
+
+[Marcel (JPL)] 13:23:38
+You get text back. Does that make sense? Okay.
+
+[Kaile Suoo] 13:23:42
+Yeah.
+
+[Marcel (JPL)] 13:23:53
+So, bottom line is, well, you have to work on VLMs, your work will also be applicable to.
+
+[Marcel (JPL)] 13:23:59
+Llms with the same framework.
+
+[Marcel (JPL)] 13:25:23
+Okay, this looks good. Um… Let me see if I can show you something here.
+
+[Marcel (JPL)] 13:25:49
+Okay. So, this one example of the things that we could do with a PLM on board.
+
+[Marcel (JPL)] 13:25:56
+There's a picture of a curiosity, you know, Curiosity rover wheel, and it has a hole.
+
+[Marcel (JPL)] 13:26:03
+And then we can ask for an assessment. Right?
+
+[Marcel (JPL)] 13:26:08
+And then we can also provide another image with a grid and ask to make an assessment for each one of the.
+
+[Marcel (JPL)] 13:26:13
+Different portions of the grid. Of the, you know, each cell.
+
+[Marcel (JPL)] 13:26:19
+Right? And then also rank them, you know. Whether it's, you know, from less than… from more damage to less damaged.
+
+[Marcel (JPL)] 13:26:27
+You know, estimate the length. Of… or the dimensions of the hole.
+
+[Marcel (JPL)] 13:26:34
+Right? Um, okay, what else?
+
+[Marcel (JPL)] 13:26:39
+So, this is a picture of Curiosity, what is your geological assessment?
+
+[Marcel (JPL)] 13:26:44
+Blah blah blah blah blah… your component running on a space car, you receive images and respond only with single numbers or lists of key-value pairs for non-responding JSON.
+
+[Marcel (JPL)] 13:26:54
+How many rounded rocks do you see? 27. Name their… name there after Lord of the Rings characters.
+
+[Marcel (JPL)] 13:27:00
+And it has… they have the bounding box. Okay, we go back to being a normal responsible LM.
+
+[Marcel (JPL)] 13:27:06
+So, um… The camera used has these specs. Let's estimate the dimensions of Elrond.
+
+[Marcel (JPL)] 13:27:19
+So, it's about 12.2cm wide and 16.cm high, right? So these are different…
+
+[Marcel (JPL)] 13:27:29
+Examples. I've been running other types of examples over the stock market, also for radiology.
+
+[Marcel (JPL)] 13:27:34
+Uh, which I, before coming to JPL, I worked on radiology, so… you know, like, can you do a diagnosis of this? Can you also do a…
+
+[Marcel (JPL)] 13:27:43
+Diagnosis of a… of a mammogram, and then detect a cancer, right?
+
+[Marcel (JPL)] 13:27:49
+Create a report, right? Suspicious abnormality, which is true. Um, I have many more, but not here in LM Studio.
+
+[Marcel (JPL)] 13:28:05
+Yes, this one, the so-call… wildfires.
+
+[Marcel (JPL)] 13:28:10
+Okay, so these were fires that happened in California in 2017.
+
+[Marcel (JPL)] 13:28:17
+Um, how many fires do you see, to what zip codes are impacted by the fires?
+
+[Marcel (JPL)] 13:28:23
+What zip code should we evacuate in 5 hours? What counties are impacted? Los Angeles, Ventura, and San Diego.
+
+[Marcel (JPL)] 13:28:29
+How many acres has the Sovereign fire burned? 45,000, right? So you can do things like this from a spacecraft.
+
+[Marcel (JPL)] 13:28:43
+There's another Mars picture. Classify the different geological features…
+
+[Marcel (JPL)] 13:28:51
+Are there any features that would help detect water? Okay, so you guys get the point, right? So these are all the things, and more, we could do a lot more, because.
+
+[Marcel (JPL)] 13:29:00
+One thing that LLMs or VLMs do is that they can also… you can pass more than one, and you can detect changes from one image to another.
+
+[Marcel (JPL)] 13:29:07
+So, if you have an image from. Every day, uh… noon, then you can see how the weather is changing, how the light is changing, how a lot of different things are changing.
+
+[Marcel (JPL)] 13:29:18
+And make assessments that are based on the temporal. Aspect of being on Mars.
+
+[Marcel (JPL)] 13:29:25
+There are a lot of other use cases that I'm thinking of. As a matter of fact, I'm working on a mission.
+
+[Marcel (JPL)] 13:29:31
+Proposal that… where we are trying to do just that right now, like, trying to deploy AI for many different purposes, like human exploration.
+
+[Marcel (JPL)] 13:29:40
+Um… Um… yeah, I'll stop there, but…
+
+[Marcel (JPL)] 13:29:45
+The work you're doing is actually really cool, and it's actually really useful.
+
+[Marcel (JPL)] 13:29:52
+Any questions?
+
+[Marcel (JPL)] 13:29:59
+Okay, so how do I sign the charter?
+
+[Axel Vandenheuvel] 13:30:04
+I think you just… Yeah.
+
+[Marcel (JPL)] 13:30:06
+Initial.
+
+[Kaile Suoo] 13:30:07
+Initial, maybe? I don't know, I don't think it's, like, that formal.
+
+[Marcel (JPL)] 13:30:11
+Okay, well… It's signed. Uh…
+
+[Marcel (JPL)] 13:30:17
+I don't know that I need to, uh… pro sponsor.
+
+[Axel Vandenheuvel] 13:30:22
+Maybe we just change the font to make it look like cursive or something? I'm not sure.
+
+[Marcel (JPL)] 13:30:37
+Uh… okay.
+
+[Marcel (JPL)] 13:30:43
+And I'm a doctor, so if you guys want to put doctor, then… that, um, approved.
+
+[Marcel (JPL)] 13:30:51
+10, 16, 25… And they just… should we use the…
+
+[Marcel (JPL)] 13:30:56
+Today, date?
+
+[Kaile Suoo] 13:30:59
+Yeah, that's fine. It just needs to be signed by… I think it was, like, this, or the coming Sunday.
+
+[Marcel (JPL)] 13:31:05
+Okay.
+
+[Marcel (JPL)] 13:31:14
+We use Comic Sense. Okay, so that's it.
+
+[Patrick Hunt] 13:31:23
+Awesome, thank you.
+
+[Marcel (JPL)] 13:31:25
+Okay, no problem. You guys, uh, get to work, uh, because you are… timeline to have a first demo on December 5th, or a first, uh, you know.
+
+[Marcel (JPL)] 13:31:36
+Approach to the… to the runtime is… is… is gonna be… is gonna happen sooner than we… Uh, we can fathom.
+
+[Axel Vandenheuvel] 13:31:49
+Sounds great. Yep.
+
+[Marcel (JPL)] 13:31:50
+Okay. Yep. Okay, well, if that's all, then I'm gonna go.
+
+[Kaile Suoo] 13:31:55
+Thank you.
+
+[peyton] 13:31:56
+Thank you.
+
+[Axel Vandenheuvel] 13:31:56
+Thank you.
+
+[Parker] 13:31:56
+Thank you.
+
+[jerry] 13:31:57
+Thank you.
+
+[Patrick Hunt] 13:31:58
+First of all.
+
+[Marcel (JPL)] 13:31:58
+No problem.
+
+[peyton] 13:31:59
+Right.
+

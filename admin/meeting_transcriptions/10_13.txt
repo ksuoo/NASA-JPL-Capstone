@@ -1,0 +1,927 @@
+[Axel Vandenheuvel] 13:00:07
+in order to get the best results. Um, there's probably a lot of extra BS that comes with Ollama that we don't need.
+
+[Axel Vandenheuvel] 13:00:15
+Um, and this would make more sense building on top of, like, Llama CPP, for example, but… Um… Yeah, it's kind of just up to us, I guess.
+
+[Axel Vandenheuvel] 13:00:24
+I think we can get it working pretty… quickly here, uh, just doing, like, a wrapper around Olama.
+
+[Axel Vandenheuvel] 13:00:30
+and see what works, what's not, and we feel like we have to change something, we can. Um, but… That's at least how I understand it.
+
+[Patrick Hunt] 13:00:40
+Yeah, I agree.
+
+[jerry] 13:00:44
+Okay.
+
+[Patrick Hunt] 13:00:45
+Especially since we all have access now, it should be way easier.
+
+[Patrick Hunt] 13:00:51
+And yeah, thanks again, Axel, for setting that up.
+
+[Axel Vandenheuvel] 13:00:53
+Yeah, hopefully that stays working.
+
+[Patrick Hunt] 13:00:58
+It should.
+
+[Axel Vandenheuvel] 13:01:00
+It just… it just feels like it shouldn't, you know what I mean? It feels like it shouldn't work.
+
+[Patrick Hunt] 13:01:04
+Yeah.
+
+[Axel Vandenheuvel] 13:01:04
+It's one of those things.
+
+[Axel Vandenheuvel] 13:01:09
+Um, yeah. I'm getting pretty good results with… Uh, with the 4 billion parameter, uh, Gemma?
+
+[Axel Vandenheuvel] 13:01:17
+remodel, um, asking for, like, great detail or whatever, I guess.
+
+[Axel Vandenheuvel] 13:01:21
+I don't know specifically what I should be asking, but it's doing a pretty good job.
+
+[Patrick Hunt] 13:01:26
+what's the response time like?
+
+[Axel Vandenheuvel] 13:01:27
+So far. It's a while, it's not ridiculous, it's, like, all under 10 minutes, but, um… Um, it does develop.
+
+[Patrick Hunt] 13:01:33
+Okay, that's good.
+
+[Marcel (JPL)] 13:01:36
+Guys, can you hear me? Um, I'm walking to my office, I'm gonna be there in, like, 2 minutes. Uh, I'm gonna… call back when I get there.
+
+[Axel Vandenheuvel] 13:01:37
+Yeah.
+
+[Patrick Hunt] 13:01:38
+Yeah.
+
+[Patrick Hunt] 13:01:45
+No worries. See ya.
+
+[Marcel (JPL)] 13:01:47
+Okay.
+
+[Axel Vandenheuvel] 13:01:53
+So, like, it takes a minute, but uh… It works.
+
+[Patrick Hunt] 13:02:00
+That's good.
+
+[Patrick Hunt] 13:02:04
+And he did say that's completely fine, so…
+
+[Axel Vandenheuvel] 13:02:05
+Mr. Schweitzer. I guess we should check, like, the storage. I don't really know, I haven't looked at much.
+
+[Axel Vandenheuvel] 13:02:15
+Problem is, it's not even in my room. I needed to connect it via Ethernet, because if you try to do it via, like.
+
+[Axel Vandenheuvel] 13:02:21
+like, regular Wi-Fi or whatever, like, it's so slow, so it's just not even… it's just sitting in my roommate's… That's with the router, so it's just in his room now.
+
+[Patrick Hunt] 13:02:29
+Oh, nice.
+
+[Patrick Hunt] 13:02:33
+Did they, um… did they fix the outage when they said they would?
+
+[Axel Vandenheuvel] 13:02:33
+I don't think he minds.
+
+[Axel Vandenheuvel] 13:02:39
+Uh, our, like, neighbors that had it, uh, so they got it fixed early, and then ours got fixed later.
+
+[Axel Vandenheuvel] 13:02:45
+Uh, specifically. I don't know why, but… I'm, like, kind of upset about it, I wanna, like, complain to, like, get, like, a bit of a refund, but I feel like a dad doing that. I don't know.
+
+[Patrick Hunt] 13:02:47
+Interesting. Okay. That's good, I guess.
+
+[Patrick Hunt] 13:02:59
+I don't know, I think it's definitely worth a shot.
+
+[Axel Vandenheuvel] 13:03:03
+Like, this is expensive, brother, like, 3 days without Wi-Fi, 3-4 days without Wi-Fi.
+
+[Patrick Hunt] 13:03:06
+Yeah. It's a long time.
+
+[Patrick Hunt] 13:03:48
+So is anyone studying for this midterm, then? I don't know, like, what to do.
+
+[Axel Vandenheuvel] 13:03:52
+I don't know… I don't know what to stop.
+
+[Parker] 13:03:54
+Probably not, to be honest.
+
+[Patrick Hunt] 13:03:56
+Okay. It's on Wednesday.
+
+[Axel Vandenheuvel] 13:03:57
+Is it, like, any time on Wednesday, or is it…
+
+[Nathan Khazam] 13:03:58
+When actually is it?
+
+[jerry] 13:03:59
+I'm just saying there's 7 of us.
+
+[Patrick Hunt] 13:04:02
+Yeah, true, Jerry. Yeah, I think so. On the… I think on the schedule, it says next week, but then the last class, he said it's on this Wednesday.
+
+[Parker] 13:04:03
+Wait, this was it?
+
+[Nathan Khazam] 13:04:06
+Fuck this, I'm just saying.
+
+[Patrick Hunt] 13:04:14
+that he said he'd talk about what's gonna be on it tonight, so… I just… it's hilarious that there is one.
+
+[Axel Vandenheuvel] 13:04:19
+Okay.
+
+[Parker] 13:04:20
+Tight.
+
+[Nathan Khazam] 13:04:24
+We're just gonna take the transcript of all his, uh, his classes and run through chat, just so we know which story he's referring to.
+
+[Patrick Hunt] 13:04:28
+Literally.
+
+[Parker] 13:04:35
+It's gonna be shit like, what's a project charger for, you know, like… Like…
+
+[Patrick Hunt] 13:04:40
+Yeah, and then, like, what's a functional versus a non-functional dependency, or whatever he said, right?
+
+[Parker] 13:04:45
+Yeah.
+
+[Axel Vandenheuvel] 13:04:47
+Uh-oh.
+
+[Patrick Hunt] 13:04:47
+I know for sure that's gonna be on it, cause… I was looking at the slides, and I was like, this looks like something that's gonna be on there.
+
+[Nathan Khazam] 13:04:58
+Oh, cool, I didn't realize there were slides for this class.
+
+[Nathan Khazam] 13:05:03
+I just, I just saw the, I just saw the yaft over the same slides every time.
+
+[Patrick Hunt] 13:05:03
+Nate just does all of his apartment housekeeping during the lecture.
+
+[Patrick Hunt] 13:05:12
+He just goes off on crazy tangents. I, like, I'll zone out for a second when I come back, I have no idea how we even got there.
+
+[Nathan Khazam] 13:05:15
+Yeah…
+
+[Axel Vandenheuvel] 13:05:15
+I like.
+
+[Nathan Khazam] 13:05:21
+Were we expected to meet every week, or was it, like, every other week?
+
+[Parker] 13:05:24
+So funny.
+
+[Patrick Hunt] 13:05:47
+This meeting should be pretty short, right?
+
+[Axel Vandenheuvel] 13:05:50
+I don't have any questions. I don't know if you guys do.
+
+[jerry] 13:05:53
+Yeah, probably.
+
+[Patrick Hunt] 13:05:54
+I don't either.
+
+[jerry] 13:05:58
+Right now, every week.
+
+[Parker] 13:05:58
+It was gonna be every week. And then, as we get along, I think… we can tone down to every other.
+
+[Axel Vandenheuvel] 13:06:06
+Oh, this Thursday, we have our… TA meeting, right?
+
+[Patrick Hunt] 13:06:09
+DA meeting this week, yeah.
+
+[Nathan Khazam] 13:06:13
+I don't know if anyone wanted to, uh, like, start on some of the code. I've got… well, I guess now I have 3 midterms this week.
+
+[Nathan Khazam] 13:06:19
+So, I won't have a ton of time before Friday, and then next week should be a lot more free.
+
+[Nathan Khazam] 13:06:25
+Um, so I'll start on, like, the wrapper and layout for that stuff then.
+
+[Patrick Hunt] 13:06:31
+I'm down to join.
+
+[peyton] 13:06:31
+Yeah, I can work on it.
+
+[Patrick Hunt] 13:06:36
+Cool.
+
+[Patrick Hunt] 13:06:53
+Also, Nate, I just saw your text. Yes, I can help.
+
+[Nathan Khazam] 13:06:55
+Okay, cool.
+
+[Patrick Hunt] 13:07:06
+I'm gonna ask him in class today, too, if there's, like, any other info that we can get about the exam, because I just feel like.
+
+[Patrick Hunt] 13:07:13
+They haven't given us anything.
+
+[Parker] 13:07:19
+Are you talking about for security? Oh, yeah, it might be kind of cooked for that one, I'm not gonna lie.
+
+[Patrick Hunt] 13:07:21
+Yeah.
+
+[Parker] 13:07:26
+I don't know, stop it.
+
+[Patrick Hunt] 13:07:26
+Um… he kept saying, as long as you did the projects, you'll be fine, but…
+
+[Nathan Khazam] 13:07:28
+Yeah. That's kind of… that's literally what he said to study, and… I was like, so why do we even go to class?
+
+[Parker] 13:07:32
+Oh, okay.
+
+[Nathan Khazam] 13:07:39
+Like, I genuinely have no idea, because nothing we've done in class is, like, related to the labs.
+
+[Patrick Hunt] 13:07:42
+I don't know.
+
+[Parker] 13:07:45
+a low-key, I'm probably not gonna go show up today, so…
+
+[Nathan Khazam] 13:07:49
+No.
+
+[Patrick Hunt] 13:07:52
+Fair enough.
+
+[jerry] 13:07:54
+Hello.
+
+[Marcel (JPL)] 13:08:31
+Hello, one, two, three.
+
+[Patrick Hunt] 13:08:33
+Hey.
+
+[Marcel (JPL)] 13:09:00
+who's leading the meeting?
+
+[Kaile Suoo] 13:09:03
+Okay, um, I'll just… Give a quick update, sorry. Um… Okay, let's see, uh, updates, so… Um… First thing is, uh, the status report that we… shared with you last week, um, we filled that out.
+
+[Marcel (JPL)] 13:09:08
+Yeah, so…
+
+[Kaile Suoo] 13:09:21
+submitted it, and then, um, we also created the Gantt chart.
+
+[Kaile Suoo] 13:09:26
+If you're interested in looking at that real quick.
+
+[Marcel (JPL)] 13:09:30
+Let's see it.
+
+[Kaile Suoo] 13:09:31
+Okay, I'll share my screen, and…
+
+[Kaile Suoo] 13:09:40
+So, these are, um… a simple version, and then we came up with some tasks, but we haven't really started with a lot of it.
+
+[Kaile Suoo] 13:09:48
+Like, a lot of the work has been pretty, like, logistic so far, so…
+
+[Marcel (JPL)] 13:09:57
+So you're gonna keep completing that? So you have many tasks, which is great.
+
+[Marcel (JPL)] 13:10:02
+I think that… Yeah. I think… I think you should come up with a tentative schedule.
+
+[Kaile Suoo] 13:10:03
+And we'll keep updating it, like, as… the weeks go on, and we continue with them.
+
+[Marcel (JPL)] 13:10:13
+Or, um, I don't know that you need to go to the day level, right? But I think that at least you need to go to the, uh.
+
+[Marcel (JPL)] 13:10:23
+to the weak level, right? Um… I don't know that you need to have, like, Wednesday, Thursday, Friday, blah blah blah, right?
+
+[Kaile Suoo] 13:10:29
+Yeah, we have, like, due dates, so I guess those would be, like, the goals for having stuff done.
+
+[Marcel (JPL)] 13:10:36
+Um, yeah… That's still fine, you don't need to go to, you know, like, it can be a week to do that, right?
+
+[Marcel (JPL)] 13:10:43
+Um, but anyway, so I'll leave that up to you. I think that the bottom line, what I was starting to tell you is that, um, you also need to plan ahead for… so Gantt chart typically shows.
+
+[Kaile Suoo] 13:10:44
+Yeah.
+
+[Marcel (JPL)] 13:10:53
+everything you know at the moment. Right? So… But it's also a way for you to plan what's gonna… come after for the whole project. So, ideally, you have lines.
+
+[Marcel (JPL)] 13:11:06
+for everything that you have to do to complete the project.
+
+[Marcel (JPL)] 13:11:12
+Um, so you have the testing and reporting spring.
+
+[Marcel (JPL)] 13:11:16
+Where you don't have anything. I think that those ones, for those ones you should have, uh… Um, you know, you should have data for that, too.
+
+[Kaile Suoo] 13:11:24
+Okay.
+
+[Marcel (JPL)] 13:11:25
+At least, based on the data… based on what you think.
+
+[Marcel (JPL)] 13:11:29
+should be done with the data you have today, right?
+
+[Marcel (JPL)] 13:11:35
+Um, and then you'll realize that there are some things that, you know, you were wrong about, and then you go and modify them, but at least everybody knows, like, what is coming.
+
+[Marcel (JPL)] 13:11:45
+Even if it's far away in time.
+
+[Kaile Suoo] 13:11:47
+Okay.
+
+[Kaile Suoo] 13:11:53
+And then for other updates, um, I think Axel can talk a little bit more about it, but we were able to set up the, like, Raspberry Pi server that we can SSH into.
+
+[Axel Vandenheuvel] 13:12:02
+Yeah, we got… you got that figured out, so all of us can access the Raspberry Pi, um, whenever.
+
+[Axel Vandenheuvel] 13:12:07
+And then we got just, like, the baseline, um, Gemma 3 model.
+
+[Axel Vandenheuvel] 13:12:12
+Download it onto that, and then running, uh, with images. Uh, seems to work pretty, pretty well.
+
+[Axel Vandenheuvel] 13:12:18
+Um… the response time is quite…
+
+[Marcel (JPL)] 13:12:19
+So what… what would… Okay, so what are you doing with it? So you loaded Gemma.
+
+[Marcel (JPL)] 13:12:25
+Uh, what Gemma version? Or what, um, Quante's version?
+
+[Axel Vandenheuvel] 13:12:29
+It's the agenda 3, the 4 billion parameter one.
+
+[Marcel (JPL)] 13:12:34
+Gemma3, can you show me which one, uh, on… on Hugging Face?
+
+[Axel Vandenheuvel] 13:12:39
+Um, yeah, I don't think I pulled it up one second.
+
+[Marcel (JPL)] 13:12:52
+You said the 4 billion parameter, right?
+
+[Axel Vandenheuvel] 13:12:54
+That's correct.
+
+[Axel Vandenheuvel] 13:12:59
+I don't know, I guess I didn't access anything via hungry face, um… Have you guys?
+
+[Marcel (JPL)] 13:13:05
+I think I got it. Um… So, okay.
+
+[Marcel (JPL)] 13:13:12
+Let me share my screen.
+
+[Axel Vandenheuvel] 13:13:15
+Yep.
+
+[Marcel (JPL)] 13:13:27
+Okay, do you see Firefox?
+
+[Axel Vandenheuvel] 13:13:29
+Yeah.
+
+[Marcel (JPL)] 13:13:31
+Okay, so… so here you see, that's the raw, uh, model from Google.
+
+[Marcel (JPL)] 13:13:37
+when you run it, uh, are you running this version, or are you running a GGUF file?
+
+[Marcel (JPL)] 13:13:45
+Or something else.
+
+[Axel Vandenheuvel] 13:13:47
+I'm not sure. Um… I just ran it via Olama, like, I just did the Olama run, I guess I can look into that, I'm not…
+
+[Marcel (JPL)] 13:13:57
+Okay, so… So I… yeah, so if you run Olama, Olama will… Did you download the model directly from OLAMA?
+
+[Axel Vandenheuvel] 13:14:05
+That's correct.
+
+[Marcel (JPL)] 13:14:07
+Okay. So, I think Olama will download the GGUF version, which is, uh, when… So, GGUF, I think, is the model native to OLAMA, or LAMA CPP. I forgot which one.
+
+[Marcel (JPL)] 13:14:20
+Um, but there are different types of, uh. formats, depending on what runtime you use.
+
+[Marcel (JPL)] 13:14:27
+Um, GGUF is one. There's also XLM, I think.
+
+[Marcel (JPL)] 13:14:32
+Uh, and there might be a couple more. When you see the safe tensors files, that's the raw.
+
+[Marcel (JPL)] 13:14:39
+That's the role model, right? So, companies like NVIDIA, or Google, or whatever, when they want to optimize the models for their own hardware.
+
+[Marcel (JPL)] 13:14:48
+They download these files, and then they… We run a quantizer and some other tools in their pipeline to optimize the.
+
+[Marcel (JPL)] 13:14:56
+the models, right? So, when you run it on Llama.
+
+[Marcel (JPL)] 13:15:01
+you will be running a model that is not the one that comes from Google. You will run a model that has been created based on processing these two safe texture files.
+
+[Marcel (JPL)] 13:15:10
+Okay. Um, the Gemma 4B, 4 billion?
+
+[Marcel (JPL)] 13:15:16
+parameter model is… is not the one we want.
+
+[Marcel (JPL)] 13:15:19
+Um, because it doesn't have a VLM in it.
+
+[Marcel (JPL)] 13:15:22
+I think.
+
+[Axel Vandenheuvel] 13:15:24
+Uh, the one I'm using… does, um, that one might not, I guess.
+
+[Marcel (JPL)] 13:15:30
+No, no, it could be… it could be wrong, um, and you may be right.
+
+[Marcel (JPL)] 13:15:34
+Uh, let's see…
+
+[jerry] 13:15:35
+I think it is. It's image, text-to-text.
+
+[Marcel (JPL)] 13:15:39
+It says multimodal, so you might be right. I don't think text and image, but okay, so good.
+
+[Marcel (JPL)] 13:15:44
+Um, so, okay, so you got it running, but are you running it in a way that you can, uh… pass images to it, or just text?
+
+[Axel Vandenheuvel] 13:15:54
+Uh, images, yeah.
+
+[Marcel (JPL)] 13:15:57
+Okay, with OLAMA running on an interface, on a user interface, or from the command line?
+
+[Axel Vandenheuvel] 13:16:03
+I'm using the command line. Uh, yeah.
+
+[Marcel (JPL)] 13:16:05
+Can you show us how you do that?
+
+[Axel Vandenheuvel] 13:16:12
+Don't need to send a request to share my screen? How does that work?
+
+[Marcel (JPL)] 13:16:16
+Um, I mean, I show up… there's a button in the middle, at the bottom, that says share for me.
+
+[Axel Vandenheuvel] 13:16:19
+There we go.
+
+[Axel Vandenheuvel] 13:16:25
+Okay, hold on, I have to change my system.
+
+[Axel Vandenheuvel] 13:16:27
+Settings, apparently.
+
+[Axel Vandenheuvel] 13:16:36
+Uh, I'm gonna quit the Zoom meeting and rejoin, I guess, really quickly.
+
+[Marcel (JPL)] 13:16:39
+Okay.
+
+[Axel Vandenheuvel] 13:17:14
+Okay, hopefully…
+
+[Axel Vandenheuvel] 13:17:20
+You guys see that?
+
+[Marcel (JPL)] 13:17:23
+Yeah. Okay, so how do you pass the image?
+
+[Axel Vandenheuvel] 13:17:27
+Um. I'm just putting… I just have an image folder on.
+
+[Axel Vandenheuvel] 13:17:32
+the Raspberry Pi, and then… I just put in the images, um… From my computer onto the Raspberry Pi.
+
+[Marcel (JPL)] 13:17:40
+Okay.
+
+[Axel Vandenheuvel] 13:17:40
+And then… I just run…
+
+[Axel Vandenheuvel] 13:17:51
+the model… And then I just pass it in like this. I don't know if there's a more efficient way to do it, but, um…
+
+[Axel Vandenheuvel] 13:18:02
+And I just… since it's… I'm running it, like, from… the images folder, I'm just doing this.
+
+[Marcel (JPL)] 13:18:11
+So is that how it's done with Ollama? You just pass an image within the prompt like that?
+
+[Axel Vandenheuvel] 13:18:16
+Uh, this is how it's done with Gemma 3. Other models… Well, I guess I tried Lava as well, it was the same type of… the same deal, where you could just, like, pass in the image like that, um, when it's in your…
+
+[Axel Vandenheuvel] 13:18:29
+you know, when you're in the directory, it's in, or the path to it, or whatever.
+
+[Marcel (JPL)] 13:18:34
+Yeah, if that's the case, then it's good, but… I wonder if, you know, like, because, um… AI sometimes can ignore the things that you tell them to do, so I wonder if they can ignore.
+
+[Marcel (JPL)] 13:18:47
+the image being passed, also.
+
+[Axel Vandenheuvel] 13:18:49
+Uh, it says added image here, that's so you know it actually reads it.
+
+[Marcel (JPL)] 13:18:52
+No, I know, I know, but what I mean is, like, you know, it added the image, but what if it doesn't, right?
+
+[Marcel (JPL)] 13:18:58
+when you write on a spacecraft. Then how do you work around that?
+
+[Patrick Hunt] 13:19:02
+Yeah, I did, uh… I actually ran into that issue when I, uh, made a small typo. I think I was using Moondream with the llama.
+
+[Patrick Hunt] 13:19:11
+And I made a small typo in the image name, and the output was just, uh, like, bogus output, talking about.
+
+[Patrick Hunt] 13:19:18
+something that wasn't even close to the actual image.
+
+[Axel Vandenheuvel] 13:19:21
+I mean, I guess it's on us, right? We'll have to have some sort of, like, fault tolerance where it, like.
+
+[Axel Vandenheuvel] 13:19:26
+If it doesn't add a photo, it'll, like, X out or something.
+
+[Marcel (JPL)] 13:19:30
+Okay, and can you pass more than one image? So can you say, like, this image and these other image?
+
+[Axel Vandenheuvel] 13:19:35
+Uh, I haven't tried, I can try.
+
+[Marcel (JPL)] 13:19:37
+Because that's… that's how we're going to deal with, like, um, imagine… Okay, edit image.
+
+[Marcel (JPL)] 13:19:43
+So, how do you get the output now?
+
+[Axel Vandenheuvel] 13:19:47
+Uh, the… it was running. It takes, like, a… it takes, like, a couple minutes, um… Using this model.
+
+[Marcel (JPL)] 13:19:53
+Oh, so you're saying that it's gonna tell us, but on its own schedule?
+
+[Axel Vandenheuvel] 13:19:59
+Yeah, it has no, like, output timer, I guess.
+
+[Marcel (JPL)] 13:20:02
+Okay, but it's working… it's working on the output in the background now.
+
+[Axel Vandenheuvel] 13:20:03
+Is that the direction. No, I know, I just exited out to try to add two photos, see if it works.
+
+[Marcel (JPL)] 13:20:10
+Ah, okay, got it.
+
+[Axel Vandenheuvel] 13:20:13
+Um… Can I just do it like this? I don't know.
+
+[Axel Vandenheuvel] 13:20:24
+What is this hero?
+
+[Axel Vandenheuvel] 13:20:32
+Sure. It did add both of them, so… And then…
+
+[Marcel (JPL)] 13:20:34
+Yeah, that's cool. Okay, that's very cool. Okay, so… so I think that what you need to look into is now, if Volame can do that on its own, it's like, that's all I'm… provide that capability.
+
+[Marcel (JPL)] 13:20:50
+for you to be able to do that through an API, or through a library that you can.
+
+[Marcel (JPL)] 13:20:56
+used to write your own library, you know?
+
+[Axel Vandenheuvel] 13:20:59
+Yeah, that's the part that we're… we're looking to do now, the… That's really cool. We're not sure what the capabilities are at this moment, I don't think, like us, or I'm not at least.
+
+[Marcel (JPL)] 13:21:03
+Okay.
+
+[Marcel (JPL)] 13:21:10
+And can you do CTRL-Z?
+
+[Marcel (JPL)] 13:21:14
+And then type BG.
+
+[Marcel (JPL)] 13:21:20
+And then enter. And then top, right top, and then enter.
+
+[Marcel (JPL)] 13:21:28
+Uh, just go down. Okay, Olama is using… four cores right now.
+
+[Marcel (JPL)] 13:21:35
+And your Raspberry Pi has… How many? Four cores?
+
+[Axel Vandenheuvel] 13:21:42
+I don't know.
+
+[Marcel (JPL)] 13:21:46
+Okay, so… so it's running on the CPU. I wonder if… Okay, you can press Q.
+
+[Marcel (JPL)] 13:21:53
+And then type FG, enter. And then you're running all of them again. Okay, so… Um… That's interesting. So, one thing you need to look into also is whether OLAMA can be… can be co-opted, or actually, can it use the GPU and the Raspberry Pi?
+
+[Marcel (JPL)] 13:22:16
+To run the model. Because right now, it's running on the CPU, which might be fine, but also we want to know if we can use the GPU.
+
+[Marcel (JPL)] 13:22:24
+And then, obviously…
+
+[Axel Vandenheuvel] 13:22:24
+Okay, I'm… yeah, I'm almost… Uh, there was a warning that says when you install.
+
+[Axel Vandenheuvel] 13:22:32
+Olama onto the Raspberry Pi. it does say that, like, it can only use the CPU. I don't know if that's true.
+
+[Axel Vandenheuvel] 13:22:38
+Um, but that's the warning you get when you install it.
+
+[Axel Vandenheuvel] 13:22:40
+on the Raspberry Pi.
+
+[Marcel (JPL)] 13:22:43
+Okay, well, you guys need to look into… into that. Um… And also, if Olama only… if Olama prevents you from using the GPU, we can look at other runtimes to see if there are other runtimes that let you use the GPU, too.
+
+[Axel Vandenheuvel] 13:22:46
+Okay.
+
+[Axel Vandenheuvel] 13:22:57
+Certainly. Okay.
+
+[Marcel (JPL)] 13:22:59
+Yeah, ideally, we would have that capability. Um, okay.
+
+[Marcel (JPL)] 13:23:04
+So, the other thing that you should do is try to run bigger models.
+
+[Marcel (JPL)] 13:23:08
+And see where it starts to choke, right? Like, that's part of the benchmarking and testing, too. I mean.
+
+[Marcel (JPL)] 13:23:14
+ideally, I mean, right now, you just need to check whether they can run.
+
+[Marcel (JPL)] 13:23:17
+If it takes 20 minutes, that's fine, but at least we want to know if they can run, right? They're not, like, psych-faulting or something.
+
+[Axel Vandenheuvel] 13:23:25
+Okay, yeah. I haven't tried anything higher than the 4 billion parameter one yet. I know because of 12 billion.
+
+[Axel Vandenheuvel] 13:23:30
+Uh, after this one. Um, so I can…
+
+[Marcel (JPL)] 13:23:32
+Yeah, ideally we could run a quantized version of the 27 billion parameter.
+
+[Marcel (JPL)] 13:23:37
+That would be the ideal. Yeah. But right now, you're running the 4 billion parameter.
+
+[Axel Vandenheuvel] 13:23:39
+Of the $27 billion, is that what you said?
+
+[Axel Vandenheuvel] 13:23:42
+Okay.
+
+[Marcel (JPL)] 13:23:45
+You're just taking a long time. So if you… if you type, uh, don't do anything, but if you were to just, like, ask a question in text, does it reply pretty much immediately?
+
+[Axel Vandenheuvel] 13:23:55
+Yeah, pretty much, yeah.
+
+[Marcel (JPL)] 13:23:57
+Okay, so the reason why it's taking longer is because of the images right now.
+
+[Axel Vandenheuvel] 13:24:00
+That's correct, yeah.
+
+[Marcel (JPL)] 13:24:04
+Okay, well, that's… that's really… That's another… you guys did well, um… Okay, so there are a lot of questions, but at least you got it running, which is great. I think that I was thinking maybe that would be one of the bottlenecks for us, that to be able to load images, but if Olana lets you do that, then we… we've already accomplished quite a bit.
+
+[Marcel (JPL)] 13:24:23
+Um… So anyway, so bottom line, we need to try more models, we need to check if it provides facilities for you to be able to call those, uh.
+
+[Marcel (JPL)] 13:24:32
+Um, you know, to make those calls, uh, through an API or through a library.
+
+[Axel Vandenheuvel] 13:24:37
+Mm-hmm.
+
+[Marcel (JPL)] 13:24:38
+And then third is… we need to see if it can run on the GPU.
+
+[Axel Vandenheuvel] 13:24:45
+Okay, that sounds good.
+
+[Marcel (JPL)] 13:24:51
+Let's leave it running while we talk. Let's see what happens.
+
+[Axel Vandenheuvel] 13:24:55
+It… it didn't take this long when I ran it.
+
+[Axel Vandenheuvel] 13:24:59
+an hour or two ago, but that could be because there's two images now.
+
+[Marcel (JPL)] 13:25:02
+Um, how much… so, uh, okay, can you… can you do CTRL-Z again?
+
+[Marcel (JPL)] 13:25:10
+and type BG. And then, uh, type free.
+
+[Marcel (JPL)] 13:25:15
+Enter. Free and enter. So it's using… Xero swap, it's using 6GB of RAM.
+
+[Marcel (JPL)] 13:25:27
+But it still has 3.5GB of RAM. Okay, that's not bad.
+
+[Marcel (JPL)] 13:25:34
+Um. You only have, uh, OLAM running, pretty much.
+
+[Marcel (JPL)] 13:25:39
+I guess. Um, type UNA name.
+
+[Marcel (JPL)] 13:25:45
+letter U. Name?
+
+[Axel Vandenheuvel] 13:25:48
+Name.
+
+[Marcel (JPL)] 13:25:49
+Together, you name? Yeah. space dash A.
+
+[Marcel (JPL)] 13:25:55
+Enter. Okay, I was briefed by Linux. What distribution is that?
+
+[Marcel (JPL)] 13:26:03
+Oh, uh, oh, Deviant, okay. Okay, that's good. Type F, G, and enter.
+
+[Marcel (JPL)] 13:26:12
+Are you guys with Linux? Are you guys good with Linux?
+
+[Axel Vandenheuvel] 13:26:14
+What'd you say? Sorry. Uh, I'm not, maybe you guys are.
+
+[Marcel (JPL)] 13:26:22
+Just wondering if I'm speaking, you know, another language.
+
+[Axel Vandenheuvel] 13:26:24
+That one?
+
+[Patrick Hunt] 13:26:26
+I feel pretty good with it.
+
+[Marcel (JPL)] 13:26:28
+Okay, hopefully what I was doing here is not something that you guys are unaware of, right? Switching from task to task, background, foreground, okay.
+
+[Marcel (JPL)] 13:26:36
+Um, okay, so you guys have some work to do, but I'm really happy that you guys were… oh, look, it's actually typing.
+
+[Axel Vandenheuvel] 13:26:43
+Okay.
+
+[Marcel (JPL)] 13:26:49
+So once the image is loaded, it seems like it's pretty quick.
+
+[Axel Vandenheuvel] 13:26:54
+Yeah, it spits out text for, like, uh, like, fairly quickly, but it just, like.
+
+[Axel Vandenheuvel] 13:26:58
+gives you nothing for a good amount of time, so…
+
+[Marcel (JPL)] 13:27:01
+So that tells me that maybe if it's the loading part, that loading might take the same amount of time, regardless of the model size.
+
+[Marcel (JPL)] 13:27:09
+Yeah, so you see this response is typical of a small model.
+
+[Axel Vandenheuvel] 13:27:09
+Okay.
+
+[Marcel (JPL)] 13:27:13
+Right? It's very, like… you know, non-committal.
+
+[Axel Vandenheuvel] 13:27:18
+We got, like, a… I got, like, a pretty big response on one of the MOUs when I just asked for it in good detail.
+
+[Axel Vandenheuvel] 13:27:24
+Like, all of this.
+
+[Marcel (JPL)] 13:27:26
+Yeah, but what I mean is that you have to force the detail. It doesn't happen by default, right? Um, okay.
+
+[Axel Vandenheuvel] 13:27:31
+Yeah.
+
+[Marcel (JPL)] 13:27:32
+Yeah, so when you run a bigger model, by default gives you more data, and if you ask for more data, it's going to give you even more data, right? So that's what I meant.
+
+[Axel Vandenheuvel] 13:27:40
+Yeah, okay, yeah.
+
+[Marcel (JPL)] 13:27:43
+Okay, anything else, guys, that you want to cover?
+
+[Axel Vandenheuvel] 13:27:50
+Uh, that was all I… I was working on, at least.
+
+[Axel Vandenheuvel] 13:27:54
+And then looking into a little bit of the… the CLI, but I'm not sure. Uh… how that works with the Raspberry Pi, yep.
+
+[Marcel (JPL)] 13:28:06
+Okay, well, I don't have anything else from my end.
+
+[Marcel (JPL)] 13:28:09
+Um, so…
+
+[Kaile Suoo] 13:28:14
+That sounds good. Thank you.
+
+[Axel Vandenheuvel] 13:28:15
+Great.
+
+[Patrick Hunt] 13:28:15
+Thank you.
+
+[Parker] 13:28:16
+I like you.
+
+[Marcel (JPL)] 13:28:16
+No problem. Okay, well, that's all, and we can stop here.
+
+[peyton] 13:28:17
+Okay.
+
+[Marcel (JPL)] 13:28:22
+I'll see you next week.
+
+[Patrick Hunt] 13:28:25
+Sounds good, see you then. Alright, thanks.
+
+[Marcel (JPL)] 13:28:28
+Bye. Bye.
+
+[peyton] 13:28:29
+My.
+
+[Axel Vandenheuvel] 13:28:30
+This was transcribed, right?
+

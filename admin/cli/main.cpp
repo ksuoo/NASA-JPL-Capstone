@@ -66,6 +66,8 @@ void  eval(vector<string> argv){
 
 int main() {
     ollama::options options;
+    ollama::setReadTimeout(10800);
+
     /*vector<ollama::image> img;
     img.push_back(ollama::image::from_file("earth.jpg"));
     img.push_back(ollama::image::from_file("mars.png"));

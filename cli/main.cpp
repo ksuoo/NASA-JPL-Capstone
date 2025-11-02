@@ -3,7 +3,7 @@
 #include <sstream>
 #include <vector>
 #include "ollama.hpp"
-
+#include "Log.cpp"
 using namespace std;
 
 vector<string> parseLine(string line){
@@ -11,6 +11,7 @@ vector<string> parseLine(string line){
     string segment;
     stringstream ss(line);
     vector<string> argv;
+    if(line.length()== 0 ) return argv;
 
     //segment line into where quotes separate the command
     while(getline(ss, segment, '"')){
@@ -36,38 +37,71 @@ vector<string> parseLine(string line){
     return argv;
 }
 
-
-
-void  eval(vector<string> argv){
+string generate(vector<string> argv){
     stringstream ss;
-    if(argv[0] == "generate"){
-        //checks if command is valid
-        //if(argv.size()<2){return;}
-        //if(!(argv[1][0] == '"' && argv[1].back() == '"')){return;}
-        //generates response
-        if(argv.size()>2){
+    string prompt = argv[1];
+    int numArgs = argv.size();
+    const string errMsg = "Incorrect usage of generate. Ex: generate \"hello world\"";
+    //checks if command is valid
+    if(numArgs<2){return errMsg;}
+    //generates response
+    if(argv.size()>2){
             ollama::options options;
-            vector<ollama::image> img;
+            vector<ollama::image> attatchments;
+
             for(int i = 2; i<argv.size(); i++){
                 cout<< "loading: " << argv[i]<<endl;
-                img.push_back(ollama::image::from_file(argv[i]));
+                try{
+                    attatchments.push_back(ollama::image::from_file(argv[i]));
+                }catch(...){
+                    return "Failed to load image";
+                }
             }
-            ollama::images promptImages = img;
-            cout << ollama::generate("gemma3:4b", argv[1], options, promptImages) << endl;
-        }else{
-            cout << "generating: " << argv[1] << endl;
-            cout << ollama::generate("gemma3:4b", argv[1]) << endl;
-        }
 
+            ollama::images promptImages = attatchments;
+            ss << ollama::generate("gemma3:4b", prompt, options, promptImages) << endl;
+    }else{
+        cout << "generating: " << prompt << endl;
+        ss << ollama::generate("gemma3:4b", prompt) << endl;
     }
-    return;
+    return ss.str();
+}
+
+int save(vector<string> argv){
+    string filename = "response.txt";
+    if(argv.size() == 2) {
+        filename = argv[1];
+    }
+    string file_content = Log::getInstance()->getLastMessage();
+    ofstream out(filename);
+    out << file_content;
+    return 0;
+}
+
+string eval(vector<string> argv){
+    if(argv.size()==0) return "";
+    string command = argv[0];
+    string output;
+    if(command == "generate"){
+
+        output = generate(argv);
+        cout << output << endl;
+        return output;
+    }
+    if(command == "save"){
+        save(argv);
+        return "saved";
+    }
+
+    output = "invalid command";
+    cout << output << endl;
+    return output;
 }
 
 
 int main() {
     ollama::options options;
     ollama::setReadTimeout(10800);
-
     /*vector<ollama::image> img;
     img.push_back(ollama::image::from_file("earth.jpg"));
     img.push_back(ollama::image::from_file("mars.png"));
@@ -79,12 +113,13 @@ int main() {
     {
         getline(cin,command);
         vector<string> argv = parseLine(command);
+        string response = eval(argv);
+        
+        if(argv.size()>0 && argv[0] == "quit"){break;}
 
-        if(argv[0] == "quit"){
-            break;
-        }
         //cout << argv[2] << endl;
-        eval(argv);
+        Log::getInstance()->insert("User: " + command);
+        Log::getInstance()->insert(response);
         std::cout << "Ollama_CLI>";
     }
     return 0;

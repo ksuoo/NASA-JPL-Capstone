@@ -3,14 +3,14 @@
 - [x] Jerry Li
 - [x] Parker Secrest
 - [x] Peyton Barger
-- [] Kaile Suoo
+- [ ] Kaile Suoo
 - [x] Patrick Hunt
 - [x] Nathan Khazam
 
 ## 11/3/25 Sponser Out
 
 ## 10/30/2025 TA 
-- [] Axel VandenHeuvel
+- [ ] Axel VandenHeuvel
 - [x] Jerry Li
 - [x] Parker Secrest
 - [x] Peyton Barger
@@ -181,6 +181,7 @@
 - [x] Kaile Suoo
 - [x] Patrick Hunt
 - [x] Nathan Khazam
+
 
 
 

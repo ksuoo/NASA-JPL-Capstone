@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <unistd.h>
 #include "ollama.hpp"
 #include "Log.cpp"
 using namespace std;
@@ -32,37 +33,111 @@ vector<string> parseLine(string line){
         }
     }
     for(string x:argv){
-        
     }
     return argv;
+}
+
+ map<string, string> extractFlags(vector<string> argv){
+    // we can start with --model, --temperature, and --num_predict
+    map<string, string> flags;
+    ollama::options options;
+
+    const vector<string> validFlags = {
+        "temperature",
+        "num_predict",
+        "num_ctx",
+        "model"
+    };
+
+    for(int i = 0; i < argv.size(); i++){
+        string current_arg = argv[i];
+
+        if(current_arg.rfind("--", 0) == 0) {
+            string flag = current_arg.substr(2);
+
+            // simple check to see if the flag is valid
+            if (find(validFlags.begin(), validFlags.end(), flag) != validFlags.end()){
+                //find the corresponding value for the flag
+                if (i + 1 < argv.size() && argv[i + 1].rfind("--", 0) != 0) {
+                    flags[flag] = argv[i + 1];
+                    //skip iterating through the value we already extracted 
+                    i++;
+                }
+            }
+            else{
+                cout << "Unrecognized flag '--" << flag << "' will be ignored" << endl;
+            }
+        }
+
+    }
+
+    return flags;
+
+}
+
+bool endsWith(const string& fullString, const string& ending){
+    if (ending.size() > fullString.size())
+        return false;
+    return fullString.compare(fullString.size() - ending.size(), ending.size(), ending) == 0;
+
 }
 
 string generate(vector<string> argv){
     stringstream ss;
     string prompt = argv[1];
+    string model = "gemma3:4b";
     int numArgs = argv.size();
     const string errMsg = "Incorrect usage of generate. Ex: generate \"hello world\"";
     //checks if command is valid
     if(numArgs<2){return errMsg;}
     //generates response
-    if(argv.size()>2){
-            ollama::options options;
-            vector<ollama::image> attatchments;
 
-            for(int i = 2; i<argv.size(); i++){
-                cout<< "loading: " << argv[i]<<endl;
-                try{
-                    attatchments.push_back(ollama::image::from_file(argv[i]));
-                }catch(...){
-                    return "Failed to load image";
-                }
+
+    map<string, string> flags = extractFlags(argv);
+    //set model if provided
+    if (flags.find("model") != flags.end()){
+        model = flags["model"];
+    }
+
+    if(argv.size()>2){
+
+            ollama::options options;
+            vector<ollama::image> attachments;
+
+            // sample flags, we can add more and probably do this in a function as we go when we want to deal with more optimization stuff
+            // temperature basically controls how creative the model's output is
+            // num_predict can be tuned to mess around with the length of the model's output
+            // num_ctx can adjust the context window size
+            // prompt flag?
+            if (flags.find("temperature") != flags.end()){
+                options["temperature"] = stof(flags["temperature"]);
+            }
+            if (flags.find("num_predict") != flags.end()){
+                options["num_predict"] = stoi(flags["num_predict"]);
+            }
+            if (flags.find("num_ctx") != flags.end()){
+                options["num_ctx"] = stoi(flags["num_ctx"]);
             }
 
-            ollama::images promptImages = attatchments;
-            ss << ollama::generate("gemma3:4b", prompt, options, promptImages) << endl;
+            for(int i = 2; i<argv.size(); i++){
+                // doing this to account for flag usage
+                if (endsWith(argv[i], ".png") || endsWith(argv[i], ".jpg") || endsWith(argv[i], ".jpeg")){
+                    cout<< "loading: " << argv[i]<<endl;
+                    try{
+                        attachments.push_back(ollama::image::from_file(argv[i]));
+                    }catch(...){
+                        return "Failed to load image";
+                    }
+                }
+                
+            }
+
+            ollama::images promptImages = attachments;
+            
+            ss << ollama::generate(model, prompt, options, promptImages) << endl;
     }else{
         cout << "generating: " << prompt << endl;
-        ss << ollama::generate("gemma3:4b", prompt) << endl;
+        ss << ollama::generate(model, prompt) << endl;
     }
     return ss.str();
 }

@@ -1,3 +1,23 @@
+## 11/5/2025 Team
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [ ] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
+## 11/3/25 Sponser Out
+
+## 10/30/2025 TA 
+- [ ] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
 ## 10/29/2025 Team
 - [x] Axel VandenHeuvel
 - [x] Jerry Li
@@ -6,6 +26,8 @@
 - [x] Kaile Suoo
 - [x] Patrick Hunt
 - [x] Nathan Khazam
+
+## 10/27/25 Sponser Out
       
 ## 10/22/2025 Team
 - [x] Axel VandenHeuvel
@@ -159,6 +181,8 @@
 - [x] Kaile Suoo
 - [x] Patrick Hunt
 - [x] Nathan Khazam
+
+
 
 
 

@@ -174,14 +174,14 @@ string eval(vector<string> argv){
 }
 
 
-int main() {
+/*int main() {
     ollama::options options;
     ollama::setReadTimeout(10800);
     /*vector<ollama::image> img;
     img.push_back(ollama::image::from_file("earth.jpg"));
     img.push_back(ollama::image::from_file("mars.png"));
     ollama::images promptImages = img;
-    cout << ollama::generate("gemma3:4b", "what are these planets", options, promptImages);*/
+    cout << ollama::generate("gemma3:4b", "what are these planets", options, promptImages);*//*
     std::cout << "Ollama_CLI>";
     string command;
     while (true)
@@ -198,5 +198,5 @@ int main() {
         std::cout << "Ollama_CLI>";
     }
     return 0;
-}
+}*/
 

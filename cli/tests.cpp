@@ -1,11 +1,5 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include<iostream>
-#include<string>
-#include<vector>
-#include <sstream>
-#include "ollama.hpp"
-#include "Log.cpp"
 #include "main.cpp"
 
 using namespace std;
@@ -40,5 +34,6 @@ TEST_CASE("Accepts and understands prompts", "[VLM]"){
     //test two images
     string response = generate(parseLine("generate \"What are these two shapes\" testImages/circle.png testImages/triangle.png"));
     transform(response.begin(), response.end(), response.begin(), ::tolower);
-    REQUIRE(response.find("circle") != string::npos && response.find("triangle") != string::npos);
+    REQUIRE(response.find("circle") != string::npos);
+    REQUIRE(response.find("triangle") != string::npos);
 }

@@ -1,0 +1,1344 @@
+[Axel Vandenheuvel] 13:08:37
+in a row, so… Maybe, like I said, I guess it's different for Llama CPP, so… I don't know why.
+
+[Patrick Hunt] 13:08:39
+Okay, cool.
+
+[jerry] 13:08:44
+Wait, is it… is a timing out?
+
+[jerry] 13:08:49
+Before, like, while it's trying to process the problem, like… Okay. Mm-hmm.
+
+[Patrick Hunt] 13:08:53
+Yeah, so it's loading the model, um… I think it's, uh… Just says signal was killed, and then on a separate line, it says aborted, so… I'm guessing that's some kind of timeout or something.
+
+[Patrick Hunt] 13:09:11
+Could maybe, like, print a stack trace or something for a little more detail.
+
+[Patrick Hunt] 13:09:17
+So I don't… I feel like that's a little vague.
+
+[Kaile Suoo] 13:09:23
+Yeah. Alright, hi Marcel.
+
+[Patrick Hunt] 13:09:25
+Hey, how are you?
+
+[Marcel (JPL)] 13:09:26
+Okay. Doing well. Um… Back in California.
+
+[Marcel (JPL)] 13:09:33
+And we have the government reopening, maybe. So I'm excited.
+
+[Kaile Suoo] 13:09:37
+Oh, really? Okay.
+
+[Patrick Hunt] 13:09:39
+Wait, what, might be reopening? Oh, yeah, that's always good.
+
+[Marcel (JPL)] 13:09:41
+the government? I was… I was in Washington, D.C, um… last week, and, um, I walked from… I mean, throughout the city, and it looks so deserted.
+
+[Marcel (JPL)] 13:09:56
+Like, work from the capital to the… What's the needle called? The George Washington Monument?
+
+[Kaile Suoo] 13:10:02
+Oh, yeah.
+
+[Marcel (JPL)] 13:10:03
+There was nobody. Um… anyway, yeah, um… You know, we can, you know, JPL is a little different in that when there is a… Um, the government is closed, we're still open because we are a…
+
+[Marcel (JPL)] 13:10:19
+federally funded research and development center. Um, so the way that we get funds is by.
+
+[Marcel (JPL)] 13:10:25
+Trenches of money throughout the year. So we can remain open, but the other… Directly funded organizations by the government, they get funding.
+
+[Marcel (JPL)] 13:10:35
+Daily for their operations, basically, right? Um, so yeah, we can continue open, but the rest of the government can't, so when we have to deal with our NASA counterparts, um… Then they're not there if the government is closed.
+
+[Marcel (JPL)] 13:10:52
+So, yeah, let's talk about your project. So, what's new?
+
+[Axel Vandenheuvel] 13:10:52
+Interesting.
+
+[Kaile Suoo] 13:10:56
+Um, did you get the chance to review the email we sent last week?
+
+[Marcel (JPL)] 13:11:01
+I did, but I forgot what it said. Let me see.
+
+[Kaile Suoo] 13:11:06
+Okay, well, I can kind of combine… That and last week's update, like, tied into one then.
+
+[Kaile Suoo] 13:11:14
+Let's pull it up.
+
+[Marcel (JPL)] 13:11:19
+Yeah, so we can talk about each one of those.
+
+[Marcel (JPL)] 13:11:22
+Um, bullets. Yeah, so Lama CPP has a multi-model CLI tool that takes in images.
+
+[Kaile Suoo] 13:11:22
+Okay.
+
+[Marcel (JPL)] 13:11:28
+So that means that you can ask, you can send both the image or multiple images with.
+
+[Marcel (JPL)] 13:11:34
+The prompt?
+
+[jerry] 13:11:38
+Yeah, yeah, that's what we found. There's already an existing tool for that, yeah.
+
+[Axel Vandenheuvel] 13:11:38
+Yeah.
+
+[Marcel (JPL)] 13:11:43
+And it's more than one image that you can pass, right?
+
+[Patrick Hunt] 13:11:48
+It is, um… I think we're having some trouble getting it to recognize both images.
+
+[Patrick Hunt] 13:11:54
+I think Peyton mentioned that, uh, adjusting the prompt.
+
+[Patrick Hunt] 13:11:59
+fix that. Is what you said, right?
+
+[peyton] 13:12:03
+Yeah, I think so. I was able to get it to recognize both.
+
+[Patrick Hunt] 13:12:04
+Okay.
+
+[Patrick Hunt] 13:12:10
+Cool
+
+[Marcel (JPL)] 13:12:11
+What do we mean by change the prompt? How do you need to change the prompt to make it work?
+
+[Patrick Hunt] 13:12:25
+I think Peyton probably knows a little more about that.
+
+[Patrick Hunt] 13:12:27
+I think, uh, it was just about being more descriptive. I could be wrong, but…
+
+[Patrick Hunt] 13:12:36
+I think just maybe, like, mentioning that they're… There are… or there is more than one… photo present, or image present.
+
+[Patrick Hunt] 13:12:45
+Um… in the list of arguments.
+
+[Patrick Hunt] 13:12:49
+Or something like that.
+
+[jerry] 13:12:50
+I'm trying that right now to see if… We actually get anything. I loaded two images, so… And I just prompted with, describe these images, so let's see what it gives me.
+
+[Marcel (JPL)] 13:13:04
+Okay, yeah, we need to test that more. Um… But that's good, so you… it comes with llama CPP… Unmodified.
+
+[Marcel (JPL)] 13:13:15
+Okay. So GP is enabled to be used on the Pi, but we're unable to use it due to hardware limitations.
+
+[Marcel (JPL)] 13:13:25
+We tried to adjust the number of layers that are being used, but didn't get any results.
+
+[Marcel (JPL)] 13:13:31
+Um, okay, so that… is that… is that for LAMA CPP?
+
+[jerry] 13:13:36
+Yeah, yeah, yeah, Dallas for Lama CPP, um… We're getting, like, some kind of… or something about, um… No, I don't know if Abraham or… like, uh, unable to do the matrix multiplication.
+
+[Patrick Hunt] 13:13:50
+Yeah, it's the shared memory size of the GP is too small for the matrix.
+
+[jerry] 13:13:51
+Great. Yeah, yeah, sure, yeah.
+
+[Patrick Hunt] 13:13:55
+matrix multiplication.
+
+[Marcel (JPL)] 13:14:02
+Um…
+
+[Marcel (JPL)] 13:14:06
+So when you said enabled to be used, you mean on… so, enabled to be used by the OS, or by… or by Lama CVP?
+
+[jerry] 13:14:19
+I'm assuming Mama CPP, because… Like, when you go in and start up the CLI tool, it… It loads up, uh, like, a bunch of information of what it's doing, and… I remember that…
+
+[Marcel (JPL)] 13:14:19
+So…
+
+[jerry] 13:14:34
+It was saying… that the Vulcan Akin was… identified, so I was able to recognize the GPU.
+
+[jerry] 13:14:42
+So I'm assuming that it has… access to the GPU, but when we were trying to run.
+
+[jerry] 13:14:50
+Any prompt we would run into that issue. Of not being able to actually… Do anything.
+
+[Marcel (JPL)] 13:14:58
+Okay, so I think that the first thing you need to do is identify whether.
+
+[Marcel (JPL)] 13:15:04
+Um… Because it might be that you can't use the Raspberry Pi's GPU, and that might be okay.
+
+[Marcel (JPL)] 13:15:14
+Um… But I think the internet would be filled with that information.
+
+[Marcel (JPL)] 13:15:21
+The Raspberry Pi's GPU is not that powerful compared to a Snapdragon, a Qualcomm Snapdragon GPU, or obviously, or an Nvidia Jetson.
+
+[Marcel (JPL)] 13:15:30
+Um, so I wonder if… The same would apply to one of those. So if you had the same LAMA CPP compiled to run on that platform.
+
+[Marcel (JPL)] 13:15:39
+Would you be able to use a GPU? If the answer is yes, and you can verify that on the internet, then I don't think you need to worry about that too much, because maybe it just happens that the Raspber Pi can't.
+
+[Marcel (JPL)] 13:15:49
+And then we run the Raspberry Pi. We ran Lama CBB just on the CPU, and that might be all that we can do.
+
+[Marcel (JPL)] 13:15:58
+Um, I think that last time we talked. Was there a mention of the fact that.
+
+[Marcel (JPL)] 13:16:05
+The GPU could be used with one of the runtimes and not the other?
+
+[jerry] 13:16:14
+Uh, yeah, from… from the last time that we talked.
+
+[jerry] 13:16:17
+We're mentioning that Oloma didn't have any support. Or bulk and backends, uh, Llama CPP did.
+
+[jerry] 13:16:23
+So, the next step that we took was enabling that on the Pi.
+
+[jerry] 13:16:28
+On the CTP, and… Like we mentioned earlier, it seems like it's able to recognize the GPU from there.
+
+[jerry] 13:16:35
+But it didn't actually ruin. And we did actually, like.
+
+[jerry] 13:16:38
+Tried to research and reached out to other professors about, like, this issue.
+
+[jerry] 13:16:43
+And I think the conclusion that we're sort of sitting at right now is.
+
+[jerry] 13:16:47
+Like you said, the hardware… It probably just isn't, um… Strong enough, or capable enough to… to actually run.
+
+[jerry] 13:16:58
+On the GPU.
+
+[Marcel (JPL)] 13:16:59
+Yeah, and that may be fine. Um… So, I mean, Raspberry Pis are not known to be the best. I think they have some support for video encoding and decoding, but… You know, for all the.
+
+[Marcel (JPL)] 13:17:11
+Complex. matrix operations, they might not have everything.
+
+[Marcel (JPL)] 13:17:16
+Um, okay, so I think that we… one thing you need to do, by the way, is do a quick benchmark of both.
+
+[Marcel (JPL)] 13:17:23
+Allama and Lama CBP, and see which one is fastest running on the CPU.
+
+[Marcel (JPL)] 13:17:28
+Um, and then also, there's some fine-tuning that you can do on, on… On Llama CPP, I'm guessing, to make performance better.
+
+[Marcel (JPL)] 13:17:38
+Um, you know, how many… course you are going to be using, and, you know, there's also.
+
+[Marcel (JPL)] 13:17:44
+The parameters that have to do with flash attention and things like that.
+
+[Marcel (JPL)] 13:17:50
+Um, is there a way for you to access those?
+
+[Marcel (JPL)] 13:17:52
+configuration parameters when you run Llama CVVP?
+
+[jerry] 13:18:00
+Uh, yeah, they have a bunch of flags, I haven't looked through.
+
+[jerry] 13:18:03
+What flights are available, but… They had flags for, like, the number of GPU layers, which isn't relevant in our case, but I'm sure they have something for, like.
+
+[jerry] 13:18:12
+Uh, like, controlling the number of threads that you allocate, or something like that.
+
+[jerry] 13:18:17
+That's something we'll have to look into.
+
+[Marcel (JPL)] 13:18:18
+Yeah, I'm looking at the parameters online, um…
+
+[Patrick Hunt] 13:18:22
+I think there's a flag for the threads. That are the numbers.
+
+[Marcel (JPL)] 13:18:25
+Yeah. Thirsty.
+
+[Nathan Khazam] 13:18:30
+Um, Marissa, kind of on that note. Are there any, besides the Snapdragons, are there any specific hardware you expect to run this on?
+
+[Nathan Khazam] 13:18:37
+I'm just thinking for, like, going forward, we can have a bunch of, like, automated detection stuff to tell the platform and, you know, maximum course and stuff we can run it on.
+
+[Marcel (JPL)] 13:18:49
+Yeah, um, so we have… we have deployments of… We want to do deployments of LLMs or VLMs on any mission that we're working on for Mars, and that one will have a Jetson AGX or an.
+
+[Marcel (JPL)] 13:19:03
+An NVIDIA Jetson AGX Origin, which is a. It's very powerful, it has 64GB of RAM.
+
+[Marcel (JPL)] 13:19:10
+And it has a proper GPU on board. Um… So, Nvidia JetSense, then also the Qualcomm Snapdragons.
+
+[Marcel (JPL)] 13:19:19
+And then maybe in the future. Like, we talked in the beginning, so we have a… We're gonna have two computers that, uh, NASA, we… so NASA has developed a computer called.
+
+[Marcel (JPL)] 13:19:31
+the CCE, the Common Compute element, and that one is a RISC-V.
+
+[Marcel (JPL)] 13:19:35
+computer. I don't know that the GPU capabilities are gonna be that strong.
+
+[Marcel (JPL)] 13:19:40
+Um, so I don't think we need to worry about that one, but there's gonna be another one coming up in the future called the HPSC, which is the High Performance Spacecraft Computer, and that's new… NASA's new computer.
+
+[Marcel (JPL)] 13:19:52
+And that one has support for all the machine learning frameworks.
+
+[Marcel (JPL)] 13:19:55
+Um, I actually don't know if it has support for Olama or Llama CVP.
+
+[Marcel (JPL)] 13:20:00
+Right out of the box. Um, but I know that it supports many machine learning frameworks like TensorFlow, PyTorch, and all of those.
+
+[Marcel (JPL)] 13:20:10
+Uh, within it. Um… I don't think you need to worry about that too much, but the library that you build.
+
+[Marcel (JPL)] 13:20:21
+Has to be portable. So, if there is a parameter.
+
+[Marcel (JPL)] 13:20:26
+That you need to… So, when Lama CVP, when you run it, you said that it shows something about the GPU.
+
+[Marcel (JPL)] 13:20:33
+Do you have to actually tell AMA CBP to use the GPU, or will it try to use it by default?
+
+[jerry] 13:20:41
+Um, in my case, we had to build it.
+
+[jerry] 13:20:44
+With the Vulcan enabled. So, I guess we have to tell it to use the GPU in our case.
+
+[jerry] 13:20:51
+Oh, I'm not sure that if we ran it on.
+
+[jerry] 13:20:54
+a computer with an NVIDIA GP label, just use it right off the bat, I'm not sure.
+
+[Marcel (JPL)] 13:20:59
+Yeah, I'm looking at the configuration for Lama CPP, and it says that on the backends are created at.
+
+[Marcel (JPL)] 13:21:07
+Compile time. So, you can make a backend for CUDA, or… AMD or Vulcan… So maybe that runtime is… The backend is embedded within the runtime when you execute it, right?
+
+[Marcel (JPL)] 13:21:25
+So that makes me think that when you guys build a library.
+
+[Marcel (JPL)] 13:21:31
+The library has to be built. on.
+
+[Marcel (JPL)] 13:21:35
+on an existing… If we use LlamaCP, right, so you will build something that wraps LlamaCPP into a library.
+
+[Marcel (JPL)] 13:21:44
+Um, the Lama CPP will already be built. And you guys will have to provide a way to reference an installation or an existing Llama CPP.
+
+[Marcel (JPL)] 13:21:55
+Um, tool. And there are many ways to do that, so one of them is, like, I'm sure that Llama CPP has a way to.
+
+[Marcel (JPL)] 13:22:03
+When you run the command line tool for Llama CPP.
+
+[Marcel (JPL)] 13:22:06
+That will call some… code… Um, that you can wrap within the library.
+
+[Marcel (JPL)] 13:22:16
+And that means that you have… your library has to be aware of those functions within.
+
+[Marcel (JPL)] 13:22:20
+Within the library itself. Or you can call a command line… you can call the Lama CPP command line tool, that would be suboptimal, because it looks very hacky.
+
+[Marcel (JPL)] 13:22:30
+But you could do that, right? So that would be another way to do it.
+
+[Marcel (JPL)] 13:22:34
+So, one way is to actually call the. you know, methods and functions that my CBB uses to.
+
+[Marcel (JPL)] 13:22:42
+To the inference, that would be the best way.
+
+[Marcel (JPL)] 13:22:46
+The other one would be to just run the command line tool, and then if you run the command line tool, then obviously you're gonna run a.
+
+[Marcel (JPL)] 13:22:54
+backend, that's already implemented. Maybe the same thing applies if you run… If you call the functions that are within Lama CPP2, but… Those are two different ways to build the integration. I wonder if that's going to have some repercussions to.
+
+[Marcel (JPL)] 13:23:09
+The back ends.
+
+[Marcel (JPL)] 13:23:15
+Does that… does that make sense?
+
+[jerry] 13:23:19
+Yeah, that makes sense. Um…
+
+[jerry] 13:23:25
+If we were wrapping around the… existing… command line tool, then that's kind of… Not helpful, right? Like, that's just… Wrapping over something that already does what we wanted it to do.
+
+[Marcel (JPL)] 13:23:42
+Yeah, I think that… I think that… The value of your library is… is… I mean, it has many advantages, but one of them should be that.
+
+[Marcel (JPL)] 13:23:51
+Um, it lets you…
+
+[Marcel (JPL)] 13:23:58
+It lets you integrated with it, so your library should be the main entry point for the flight software to be able to run.
+
+[Marcel (JPL)] 13:24:05
+A VLM or LLM, right? Uh, making command line… Calls is not a good pattern.
+
+[Marcel (JPL)] 13:24:14
+to follow, um, because then… You know, that tool might be gone, and, you know.
+
+[Marcel (JPL)] 13:24:21
+From the file system, and then you will try to call it, and it's not there, or… Or the command line tool, you know, changes its parameters, you know, somebody updates the version, and then it just not changes the parameters, and then the integration is broken.
+
+[Marcel (JPL)] 13:24:35
+So… so the best way is to figure out the inflammatory CPP has a standard.
+
+[Marcel (JPL)] 13:24:40
+A standard way to call it with code. And then you call those methods or functions.
+
+[Marcel (JPL)] 13:24:47
+And that… that should be documented. Somewhere.
+
+[Marcel (JPL)] 13:24:52
+Another way to do it is maybe that LAMA CBP already has a… The REST server, or a REST interface, or something like that, right?
+
+[Marcel (JPL)] 13:25:04
+Um, that's still not the best solution, because then… You know, you have to implement the rest.
+
+[Marcel (JPL)] 13:25:11
+Call in C, which is, like, a pain in the butt.
+
+[Marcel (JPL)] 13:25:14
+Uh, it's just not… I mean, just adds slowness to the whole process.
+
+[Marcel (JPL)] 13:25:18
+You know, you have to serialize and deserialize data and make an HTTP call for something that's, you know, local.
+
+[Marcel (JPL)] 13:25:26
+Um… So you guys need to think about that trade, but ideally, yeah, we want to make the calls directly to LAMO CPP that.
+
+[Marcel (JPL)] 13:25:34
+To the inference. And there must be a way to pass parameters through a function call, you know, those parameters that you called from the command line, those ones should be passed as parameters as a function or something.
+
+[Marcel (JPL)] 13:25:49
+And your library should have a CMake, or have a make, you know.
+
+[Marcel (JPL)] 13:25:54
+A way to make it by pointing at an existing installation of.
+
+[Marcel (JPL)] 13:25:59
+of the Lama CPP library, right? So if you use LlamaCPP version X.
+
+[Marcel (JPL)] 13:26:05
+As long as it's version X and higher, or between some versions.
+
+[Marcel (JPL)] 13:26:09
+Then you just point, uh, you know, CMEG will find it, and then it will.
+
+[Marcel (JPL)] 13:26:15
+Use it to build your own library, right?
+
+[Marcel (JPL)] 13:26:27
+And if I deploy on a Snapdragon, then somebody else will work on the.
+
+[Marcel (JPL)] 13:26:33
+Deployment and installation of that backend for Snapdragon on a Snapdragon.
+
+[Marcel (JPL)] 13:26:37
+And then we just… we continue using your library, and your library will be aware of that.
+
+[Marcel (JPL)] 13:26:43
+Installation that has the Qualcomm backend and take advantage of the hardware acceleration that they have.
+
+[Marcel (JPL)] 13:26:52
+And the same thing would apply with a Jetson.
+
+[Marcel (JPL)] 13:26:57
+And if you're running on an old RISC-V computer or Raspberry Pi, then.
+
+[Marcel (JPL)] 13:27:02
+It will use the CPU, or whatever is available on that backend that's… Local.
+
+[Marcel (JPL)] 13:27:16
+But I think, I think by the way that on the internet there should be a lot of documentation as to whether you can run.
+
+[Marcel (JPL)] 13:27:22
+Llama CPP on the GPU on a Raspberry Pi.
+
+[Marcel (JPL)] 13:27:29
+I'd be surprised if that's not available online.
+
+[Patrick Hunt] 13:27:39
+There's quite a bit. Um, I think we did take a look at a lot of it, uh… I just… I don't know about everybody else, but I just could not get it to work after building it several different times with, um…
+
+[Patrick Hunt] 13:27:51
+different configurations, I just still would run into the same issue that.
+
+[Patrick Hunt] 13:27:56
+the shared memory size was too small, and… Uh, it just seemed like it was a hardware issue.
+
+[Patrick Hunt] 13:28:02
+I don't know if everyone agrees or not, but…
+
+[Marcel (JPL)] 13:28:04
+So, I think… I think that, um, is there a way for you to boot into the UAFI or the BIOS for the Raspberry Pi? Because typically, that's where you allocate the split between the video memory and the system memory.
+
+[Patrick Hunt] 13:28:19
+Yeah, we could probably try doing that.
+
+[Marcel (JPL)] 13:28:21
+I mean, that's where you typically do it. There are computers where that scaling can be done dynamically by the OS, but I'm… Maybe not on the Raspberry Pis.
+
+[Marcel (JPL)] 13:28:31
+Um, but yeah, I remember that in many computers that I owned, you have to boot into the BIOS to be able to choose how much RAM you want to allocate for the.
+
+[Marcel (JPL)] 13:28:38
+For the GPU.
+
+[jerry] 13:28:48
+Okay, yeah, that's good to know. That's probably something we can assign to someone that owns one of the guys.
+
+[Marcel (JPL)] 13:28:57
+So, do you get the error when you compile it, or when you run it?
+
+[Patrick Hunt] 13:29:03
+When we run it
+
+[Marcel (JPL)] 13:29:06
+Okay, so… so that is the NGL… Not gonna lie, NGL parameter?
+
+[Marcel (JPL)] 13:29:15
+on LAMA CDP, it's "-N-GL. Um, and that one lets you also choose how many layers you want to load.
+
+[Marcel (JPL)] 13:29:23
+Onto the… onto the VRAM. So, even if you have a small amount of VRAM, you can offload some of the.
+
+[Marcel (JPL)] 13:29:30
+layers of the LLM into it.
+
+[Patrick Hunt] 13:29:33
+I did try using that, and um… It seemed that… Maybe the error… the VRAM error was appearing before that flag was even seen, because.
+
+[Patrick Hunt] 13:29:44
+I would test different values for the NGL flag, uh, ranging from.
+
+[Patrick Hunt] 13:29:49
+I think literally negative 1, too. Just, like, just positive numbers, and uh… I still have the same output every time.
+
+[Patrick Hunt] 13:30:03
+It was a little bit strange, but, um… I think the default value's negative 1, uh, for not… not offloading anything.
+
+[Patrick Hunt] 13:30:10
+Or just zero, but both of those still yielded the same result.
+
+[Marcel (JPL)] 13:30:15
+Okay. Well, those issues are surmountable, so if we can't run it on the GPU, then fine.
+
+[Marcel (JPL)] 13:30:23
+Okay. So, should we talk about the next bullet point?
+
+[Marcel (JPL)] 13:30:30
+We were also advised to assign certain tasks slash roles to people within our group. We had a split between creating the CLI tool and testing VLabs.
+
+[Marcel (JPL)] 13:30:38
+And we were wondering if there is any more specific tasks slash roles that we could distribute between the team.
+
+[Marcel (JPL)] 13:30:44
+So, I think that, um, that's always a. Question, uh, you, do you want to separate between.
+
+[Marcel (JPL)] 13:30:52
+project or sub-project versus, uh, function. Um… Yeah.
+
+[Kaile Suoo] 13:30:57
+Um, I can explain a little bit about what we have right now.
+
+[Kaile Suoo] 13:31:01
+And then you can either, like, suggest things or see if you agree.
+
+[Kaile Suoo] 13:31:05
+So, over the past week, we split into… the four groups, so the first one is Research Ways to Optimize CPU usage on the Pi.
+
+[Kaile Suoo] 13:31:14
+Second is, set up a Docker container for the CLI tool.
+
+[Kaile Suoo] 13:31:17
+Third is research into writing test cases in C++, and the last one is.
+
+[Kaile Suoo] 13:31:22
+Enable flag usage for the CLI tool, so… We've distributed, like, these tasks, I guess, among ourselves, and then, like.
+
+[Kaile Suoo] 13:31:30
+I think we've made progress on almost all of them, so… If you think those are good, continue.
+
+[Marcel (JPL)] 13:31:34
+Well, I think… Yes. So, so, but one thing you need to think about also is, like, um… when you have to integrate them, like, do you denominate a person to do the integration across all the different sub-teams?
+
+[Marcel (JPL)] 13:31:49
+Um, that's one question, and then the other one is, like, when you have to do testing, do you have a… You know, uh… Person that does testing across the different domains, or do you have to do testing within each one of the domains?
+
+[Marcel (JPL)] 13:32:02
+And then also do integration testing across the integrations.
+
+[Marcel (JPL)] 13:32:06
+So, I think that any pattern that you come up with is going to be good, as long as you have the right person doing the job.
+
+[Marcel (JPL)] 13:32:15
+Basically. So if somebody of you is very passionate about testing, then that person does that thing. If somebody's passionate about something else, then that person does the other thing. And as long as you.
+
+[Marcel (JPL)] 13:32:27
+have the best person doing each thing, and then there are no gaps in tasks, in, like, somebody's, you know, there's something critical that should be done and nobody's doing it, then you'll be fine.
+
+[Marcel (JPL)] 13:32:37
+It's not a big project.
+
+[Kaile Suoo] 13:32:39
+Okay, sounds good.
+
+[Marcel (JPL)] 13:32:44
+It becomes more complicated when you have, like, microservices and, like, you know, many different integrations and, you know, like, when you work on a.
+
+[Marcel (JPL)] 13:32:52
+massive mission, you know, you have, like, uh… Mechanical… the mechanical team, you have the arm team for a robot, and you have the flight software, you have the.
+
+[Marcel (JPL)] 13:33:01
+Hardware people, you have the… I don't know, it becomes super complicated to manage, but… Um… and then when you have so many different sub-teams and teams working together, the… the boundaries between each team is where the issues happen, not so much within them.
+
+[Marcel (JPL)] 13:33:17
+But for you, it's going to be easy.
+
+[Marcel (JPL)] 13:33:26
+Um, what else?
+
+[jerry] 13:33:32
+I guess it…
+
+[Kaile Suoo] 13:33:32
+Um, I think Andy came in on the conversation, like, before you joined, um, Jerry can… Explain more, but, like, basically we got… the 27 billion parameter to run off the CPU?
+
+[Marcel (JPL)] 13:33:44
+Oh, wow. And, and quantized how?
+
+[jerry] 13:33:50
+Uh, I used the smallest possible quantized model, so I think it's, like.
+
+[jerry] 13:33:57
+Is it one bit? I'm not quite sure, like, yeah.
+
+[Kaile Suoo] 13:33:59
+Yeah.
+
+[jerry] 13:34:00
+That's what I used, um… I can share my screen.
+
+[Marcel (JPL)] 13:34:02
+Can I… let me see, um… Yeah, can we see?
+
+[jerry] 13:34:06
+Yeah, so from… I was wondering to Imager earlier, and it seems like it's able to.
+
+[jerry] 13:34:14
+Um… process each image that we give it, so that seems like it's fine.
+
+[jerry] 13:34:22
+But yeah, this is on Llama CPP. By the way.
+
+[jerry] 13:34:25
+So we just, like, build it with, uh… so this is the 27 billion parameter.
+
+[jerry] 13:34:31
+I'll mower right here, and I had to give it, uh, this image, which, uh, from what I read, it's, like.
+
+[jerry] 13:34:38
+Or multimodal purposes, so that's how we're able to give it images.
+
+[Marcel (JPL)] 13:34:44
+I don't know, so before you go… okay, so before you… let's… let's go up.
+
+[jerry] 13:34:44
+I'm just building up here.
+
+[Marcel (JPL)] 13:34:50
+So, what is the MM project? Can you elaborate more on that? I had no idea you had to do that.
+
+[jerry] 13:34:50
+Yeah.
+
+[jerry] 13:34:55
+Yeah, oh, so this… This was something that I downloaded from Hugging Face as well, but… With multimodal models.
+
+[jerry] 13:35:04
+At least with the CLI tool, I had to download.
+
+[jerry] 13:35:07
+Both the, uh, future UF file from the model, as well as this.
+
+[jerry] 13:35:14
+And then… and then proj file. for it as well. Um… I'm not exactly sure what it does, but… Apparently, that's what I need for it to be able to take images.
+
+[Marcel (JPL)] 13:35:28
+Okay, yeah, I have no idea how that works. Um… So you said it's IQ1S?
+
+[Marcel (JPL)] 13:35:34
+How big is that? What's the file size for that one?
+
+[jerry] 13:35:34
+Mm-hmm. Uh… I don't know the command for checking and file size, but I can just go on.
+
+[jerry] 13:35:44
+We had for it. I understand. Where I downloaded it from.
+
+[jerry] 13:35:49
+So if I go over here… Jimbo 3…
+
+[jerry] 13:35:56
+Actually, it's right here.
+
+[jerry] 13:36:02
+Close this one. So, 6.58 gigabytes.
+
+[Marcel (JPL)] 13:36:05
+Okay, um, have you tried bigger ones, or is that the biggest one that you can load?
+
+[jerry] 13:36:11
+I haven't tried bigger ones yet.
+
+[Marcel (JPL)] 13:36:15
+It would be great if you can, like… I mean, that's one of the tasks that you guys had to do, but, um… oh, I see the MM project there, down there.
+
+[jerry] 13:36:22
+Yeah, yeah. Yeah, so I just downloaded the smallest one I could.
+
+[jerry] 13:36:27
+Just to start, um, but I can definitely try.
+
+[Marcel (JPL)] 13:36:29
+Okay, yeah, that might take care of the actual… Um, vectorization of the images, okay.
+
+[Marcel (JPL)] 13:36:35
+So, um, yeah, ideally you load something bigger. Um, I think that what we want to know is, like, of all these ones here, or, you know, many of the.
+
+[Marcel (JPL)] 13:36:45
+those is, like, which one is the. We want to know which one provides the best results for the money, for the time spent.
+
+[Marcel (JPL)] 13:36:53
+Um, we have rovers… So I think that the question would be.
+
+[Marcel (JPL)] 13:36:59
+If we have an answer within, like, one minute.
+
+[Marcel (JPL)] 13:37:03
+you know, the best model you can use is this one.
+
+[Marcel (JPL)] 13:37:05
+If you want an answer within… 20 minutes, then this is the best model you can use, like.
+
+[Marcel (JPL)] 13:37:11
+And what is the first model that you can't run at all?
+
+[Marcel (JPL)] 13:37:15
+Right, like, is there any of these models here? Like, any of these quantized models here that you can't run? For example, the Q8.
+
+[Marcel (JPL)] 13:37:22
+0, that one is… Almost 30 gigabytes, can we even run that one?
+
+[jerry] 13:37:29
+Okay. And I'm assuming that that would be part of, like, the documentation for, like, um.
+
+[jerry] 13:37:36
+Adjusting what kind of models. Okay. Sounds good.
+
+[Marcel (JPL)] 13:37:36
+Yeah. Yeah, but I think it has to be phrased in terms of, like.
+
+[Marcel (JPL)] 13:37:42
+Um, you know, maybe we can use the Fibonacci sequence, but… What is one that can respond in 1 minute?
+
+[Marcel (JPL)] 13:37:51
+What is one that can respond in 2 minutes? Where is one that can respond in 3 minutes? Where is one that can respond in, you know, and so on and so forth, and you can maybe follow the Fibonacci sequence.
+
+[Marcel (JPL)] 13:38:02
+Um… Um… But we have tasks, for example, that where we want a lot of accuracy, but for those ones, we want, you know, we can let.
+
+[Marcel (JPL)] 13:38:12
+The spacecraft run that model for 30 minutes, and we don't really care.
+
+[Marcel (JPL)] 13:38:16
+Like, if we downlink… You know, 10 images, maybe we can spend the whole day processing them, and we don't care how long it's gonna take.
+
+[Marcel (JPL)] 13:38:25
+So for those, you know, we can use the biggest model that we can run.
+
+[Marcel (JPL)] 13:38:29
+Even if it takes hours, right?
+
+[Marcel (JPL)] 13:38:35
+But let's look at the answer, like, I think you were showing the command line tool.
+
+[jerry] 13:38:35
+Okay. Yeah, yes.
+
+[jerry] 13:38:41
+Okay, so… earlier.
+
+[Marcel (JPL)] 13:38:43
+Let's look… let's look, uh…
+
+[jerry] 13:38:48
+Okay, so the first image, uh, was an image of, um.
+
+[jerry] 13:38:53
+I believe it was something that I took off of the NASA website, but it was an image of.
+
+[jerry] 13:39:00
+Jupiter's Mars. But… it depicted it as Mars.
+
+[jerry] 13:39:07
+Uh… the second image was, uh… Uh, as it says, Earth.
+
+[jerry] 13:39:13
+atmosphere. Uh, but there… but I think it was specifically of… a Golden Lake or something.
+
+[Marcel (JPL)] 13:39:23
+Let me show you… Jerry, let me show you something.
+
+[jerry] 13:39:26
+Mm-hmm.
+
+[Marcel (JPL)] 13:39:38
+I think I sent a request to share my screen.
+
+[jerry] 13:39:43
+Do I have to stop sharing? I think so.
+
+[Kaile Suoo] 13:39:50
+I think it should be good now.
+
+[Marcel (JPL)] 13:39:54
+Okay, let me open something here. Give me one second.
+
+[Kaile Suoo] 13:39:59
+Or, could you send another request, maybe?
+
+[Marcel (JPL)] 13:40:02
+Yeah, yeah, I'll do it in a second, I'm opening a… the software here.
+
+[Kaile Suoo] 13:40:06
+Okay, sounds good.
+
+[Marcel (JPL)] 13:40:24
+I'm trying… I'm trying to open Docker, but it's not opening.
+
+[Marcel (JPL)] 13:40:53
+Okay, well, let me actually show you something else, then.
+
+[Marcel (JPL)] 13:41:02
+Okay, so these are just, like, as you can see, I have a long history of chats with it, but um… And tests that I showed GPL, like, stock charts, um, you know, medical images, ports, like, even, like, you have a.
+
+[Marcel (JPL)] 13:41:18
+You know, um, images of somebody playing soccer, like, can you build an analyzer that tells you if there's an offsite?
+
+[Marcel (JPL)] 13:41:25
+Uh, mammography, like, can you detect if there is a, you know, cancer?
+
+[Marcel (JPL)] 13:41:30
+Uh, also fracture, and so on, right? But there's this one which has a picture of a… you know, rover wheel on Mars.
+
+[Marcel (JPL)] 13:41:41
+There's a wheel from the Curiosity Mars rover, blah blah blah.
+
+[Marcel (JPL)] 13:41:45
+Can you do a health analysis? Then I pass an image which is with a grid.
+
+[Marcel (JPL)] 13:41:52
+And then I ask, like, what is… where is the damage, right? And score the damage for each cell.
+
+[Marcel (JPL)] 13:41:59
+rank them from more damage to less damage. Then estimate the dimensions of the hole based on the fact that.
+
+[Marcel (JPL)] 13:42:05
+wheel is 40 centimeters wide, and there's this, you know.
+
+[Marcel (JPL)] 13:42:09
+black line that marks it. And then he runs the calculation.
+
+[Marcel (JPL)] 13:42:14
+Give me a range, and so on, right? But, you could do other things, like, you know, I have this picture of Mars.
+
+[Marcel (JPL)] 13:42:22
+And then tell me what you see.
+
+[Marcel (JPL)] 13:42:27
+Okay, your component running on a spacecraft, you receive images and respond only with single numbers of.
+
+[Marcel (JPL)] 13:42:33
+Or list of key value players from now on to respond in JSON.
+
+[Marcel (JPL)] 13:42:36
+How many round of drugs do you see? 27.
+
+[Marcel (JPL)] 13:42:38
+Name them as Lord of the Rings characters, right?
+
+[Marcel (JPL)] 13:42:41
+And then there's a bonding box into one. Go back doing a normal response to LM.
+
+[Marcel (JPL)] 13:42:46
+The camera used as these specs. Uh, can you estimate… estimate the dimensions of Elrond, which is one of the rocks?
+
+[Marcel (JPL)] 13:42:52
+Okay, and it tries to calculate it, right? So, all these are the things that I would like to do on the spacecraft.
+
+[Marcel (JPL)] 13:42:59
+Or examples, right? Hopefully you got the point. But, uh, and I use Gemma 3 27 billion parameters, Q4 KM, which is about 16GB, I think.
+
+[Marcel (JPL)] 13:43:11
+I think this one. Um, and this one seems to work really well.
+
+[Marcel (JPL)] 13:43:15
+So, bottom line is, I would like to use the biggest model that I can.
+
+[Marcel (JPL)] 13:43:20
+Um, for things, like, that have to do with.
+
+[Marcel (JPL)] 13:43:23
+Um, safety or science. But there are some other things where, you know, like, maybe… I want to do them really quickly, because I have to, you know, I don't have enough memory on board, and I need to start purging data.
+
+[Marcel (JPL)] 13:43:37
+Um, and I went to get the result pretty quickly, right? Or other reasons, right? Maybe there is a downlink window.
+
+[Marcel (JPL)] 13:43:43
+to Earth that opens in the next hour, and I want to process a lot of data within the next hour, too, so that it's ready to be, you know, downlinked to Earth.
+
+[Marcel (JPL)] 13:43:52
+So, that could be another example. So, hopefully, I just wanted to color the whole thing with some examples, so you know the things that I would be thinking of doing. There are a lot of other things, like implementing a fault protection engine with an LLM.
+
+[Marcel (JPL)] 13:44:05
+The things that I showed you are VLM-based. But there are a lot of things that I would want to do that are LLM-based.
+
+[Marcel (JPL)] 13:44:11
+So that's why I think it's important that you guys think about performance and quality.
+
+[Marcel (JPL)] 13:44:16
+Uh, when you… when you run the benchmarks. And that you have some test cases that have to do with.
+
+[Marcel (JPL)] 13:44:23
+geometry and accuracy and quality of the content, and I think that we need to work together on those. I think that you guys need to come up with some.
+
+[Marcel (JPL)] 13:44:31
+Ways to measure those metrics. So, a team that's working on the assessment.
+
+[Marcel (JPL)] 13:44:37
+Um, as to… as to… as to begin a study on.
+
+[Marcel (JPL)] 13:44:42
+The assessment of the outputs, the quality of the outputs, and the time it takes to get them.
+
+[Marcel (JPL)] 13:44:53
+That's all.
+
+[jerry] 13:44:56
+Okay, so I guess in terms of identifying what something exactly is, we don't have to.
+
+[jerry] 13:45:01
+Worry too much about that, like, we can prompt it, like, saying, oh, this is… an image of… A volcanic moon.
+
+[jerry] 13:45:10
+Um, to describe something with this, or like… Something like that.
+
+[Marcel (JPL)] 13:45:16
+I think that there are a few use cases that, like, that I showed you, like, um, you have a picture of Mars, and you wanted to do a geological assessment.
+
+[Marcel (JPL)] 13:45:26
+And then you break up the image into sectors.
+
+[Marcel (JPL)] 13:45:31
+Like, uh, you know, or quadrant. And then you tell that these are the instruments that you have on board the spacecraft.
+
+[Marcel (JPL)] 13:45:39
+What instruments would you use and the different features that you see in each quadrant?
+
+[Marcel (JPL)] 13:45:44
+And then we look at it, and we try to… Compare that to what a frontier model would tell us, and we take the frontier model's response as the best.
+
+[Marcel (JPL)] 13:45:56
+The possible output that somebody can offer you, right?
+
+[Marcel (JPL)] 13:45:58
+You don't even need to ask a scientist. But you assume that the frontier models are going to be the best.
+
+[Marcel (JPL)] 13:46:05
+Representation of the best models on Earth today. So… We could have even… A frontier model score the outputs of.
+
+[Marcel (JPL)] 13:46:16
+The lesser LLM in a way that they inform you how good the quality of the output is.
+
+[Marcel (JPL)] 13:46:24
+So ideally, you would have scientists working with you to tell you, but I don't think we can, right? So… What is the best, what is the closest thing to a scientist today that can look at images, or assess the quality? Maybe it's a Frontier LLM.
+
+[Marcel (JPL)] 13:46:37
+And I would recommend that we use cloth or something like that to do the assessment, because those are better for engineering.
+
+[Marcel (JPL)] 13:46:54
+But I think that maybe, yeah, you guys should come up with some engineering examples and some science examples, and then we meet, and then we discuss whether those are good or not.
+
+[Marcel (JPL)] 13:47:03
+And then they… they will be evaluated by a frontier model.
+
+[Marcel (JPL)] 13:47:11
+You can even… you can even use a Frontier model to help you come up with, uh, good test cases for the quality output.
+
+[Marcel (JPL)] 13:47:19
+To assess the output of the quality. Yeah, the quality of the output, right?
+
+[jerry] 13:47:30
+Okay, yeah, that sounds good. Uh, yes, that can be one of the tests that we can…
+
+[jerry] 13:47:41
+Hey, do you want me to go back to share my screen?
+
+[jerry] 13:47:45
+I mean, there's not too much for me to go over.
+
+[Marcel (JPL)] 13:47:45
+Yeah. Yeah, I mean, what you were showing is actually really useful, because when… that kind of output that you got is typically… is what you typically get from a small LLM. Like, you get a really… a bit of a… I mean, something that looks good on paper, but it's a little bit…
+
+[Marcel (JPL)] 13:48:02
+Half-assed, you know, uh, it doesn't tell you a lot, but it tells you something.
+
+[Marcel (JPL)] 13:48:08
+Um, and… but if I ask, Gemma, you know, the 27 view parameter model.
+
+[Marcel (JPL)] 13:48:14
+quantized model that I have running on my Mac.
+
+[Marcel (JPL)] 13:48:17
+I get a really good quality output. It's a lengthy output too.
+
+[Marcel (JPL)] 13:48:21
+So also, you need to check… I know that there is a parameter for LAMA CPP that limits the output to… A certain token limit.
+
+[Marcel (JPL)] 13:48:30
+I think that you should use… you should let the LLM… Respond with as much length as it.
+
+[Marcel (JPL)] 13:48:37
+really needs to. Um… but the output, the way it is today, it's… it's… it's okay, but it's not… You know, it's not… I'd like to know what it says about something that has to do with science.
+
+[Marcel (JPL)] 13:48:54
+So it's hard to assess the quality of the output today, but it's, uh, by the way that it.
+
+[Marcel (JPL)] 13:48:59
+shows it looks like something that's not. That you would expect from a very small model.
+
+[jerry] 13:49:06
+Hmm. And that's probably more to do… To do with the prompting, right?
+
+[jerry] 13:49:12
+Uh, maybe there's a token limiter on there, but… Probably if we have, like, a better prompt, then… It would give us better output.
+
+[Marcel (JPL)] 13:49:24
+Yeah. Yeah, if you go up, um, go down.
+
+[Marcel (JPL)] 13:49:32
+There, uh, let's see that.
+
+[Marcel (JPL)] 13:49:41
+So, are those parameters changeable?
+
+[jerry] 13:49:47
+Uh… yeah, I have no idea.
+
+[Marcel (JPL)] 13:49:50
+Because I think they come from GEMA, so maybe not.
+
+[jerry] 13:49:53
+Yeah.
+
+[Marcel (JPL)] 13:50:06
+when you… when you run the… TLLM, um, how much memory is it using?
+
+[Marcel (JPL)] 13:50:14
+Did you change?
+
+[jerry] 13:50:15
+Uh, I haven't checked. But if I… Can I run this?
+
+[jerry] 13:50:22
+I probably wanted to be running something first, right? And then… I can run them back, and I can check.
+
+[jerry] 13:50:27
+So if I do… if I give it a name, which…
+
+[jerry] 13:50:42
+Okay, and then I say, um… Prescribe this image and detail.
+
+[jerry] 13:50:51
+And then, like, Ctrl-C.
+
+[jerry] 13:50:56
+I just run this in the background.
+
+[jerry] 13:51:01
+And then… Yes.
+
+[Marcel (JPL)] 13:51:05
+So you type top.
+
+[Marcel (JPL)] 13:51:13
+So it's using, uh…
+
+[jerry] 13:51:18
+Well…
+
+[Marcel (JPL)] 13:51:19
+56% of the memory.
+
+[Marcel (JPL)] 13:51:29
+So you still have headroom, you could load a bigger model. I mean, if that's what it's telling you, right?
+
+[jerry] 13:51:33
+Mm-hmm. Yeah.
+
+[Marcel (JPL)] 13:51:35
+Okay, push Q, and then type 3. Free, enter.
+
+[Marcel (JPL)] 13:51:44
+935 megabytes.
+
+[Marcel (JPL)] 13:51:54
+Oh, it's buffering memory, okay, that makes sense. Okay, so it's still… it's… you can still use a lot of memory here.
+
+[jerry] 13:52:03
+Okay. Yeah, I'll… Okay, I'll try, um… Downloading… The bigger models end up.
+
+[Marcel (JPL)] 13:52:04
+So that's… yeah, that's very promising.
+
+[jerry] 13:52:16
+SAP, which will take a little bit of time, but… Yeah.
+
+[Marcel (JPL)] 13:52:20
+So, for everyone, we want to capture the quality of the output, so come up with metrics to… Capture the quality, then we want to know how much memory it's using, and how quick it is to respond.
+
+[Marcel (JPL)] 13:52:36
+Also, I see that… how many courses does this computer have?
+
+[Marcel (JPL)] 13:52:41
+Is it… does it have 4?
+
+[jerry] 13:52:45
+I'm assuming. The PIOS 4?
+
+[Marcel (JPL)] 13:52:49
+If you type CAD slash proc.
+
+[jerry] 13:52:55
+slash rock.
+
+[Marcel (JPL)] 13:52:56
+CAD space, cat space. Prague slash CPU info.
+
+[jerry] 13:53:04
+Is there a dash on the info? Like so?
+
+[Marcel (JPL)] 13:53:05
+No, no, no, it's all together. Yeah, enter.
+
+[Marcel (JPL)] 13:53:11
+Okay, so you have, uh, 4 cores.
+
+[Marcel (JPL)] 13:53:24
+So yeah, you have 4 cores, and it's using all of them. When we went to top, it said 399%, so that means that it has 4 cores, and it's using 4FM.
+
+[Marcel (JPL)] 13:53:39
+Okay, these are really cool, guys.
+
+[jerry] 13:53:51
+It looks like it's still decoding the image, so does that… Influence.
+
+[jerry] 13:53:57
+How much is taking up. I'd say we're taking 60% now.
+
+[jerry] 13:54:21
+Yeah, it takes a while to… Process.
+
+[Marcel (JPL)] 13:54:25
+That's fine, that's fine.
+
+[Marcel (JPL)] 13:54:29
+And these are Raspberry Pi 5.
+
+[jerry] 13:54:31
+Yep.
+
+[Marcel (JPL)] 13:54:35
+Yeah, poor thing, it's doing quite well.
+
+[Marcel (JPL)] 13:54:40
+Okay, um, anything else?
+
+[jerry] 13:54:47
+Uh, not much else for me.
+
+[jerry] 13:54:55
+I know with some of the other tasks, we had one task for writing.
+
+[jerry] 13:55:00
+Uh, unit test. So, we've got some progress with that.
+
+[jerry] 13:55:04
+Okay, and then… and then we're… another test, I think it had to do with making a Docker image.
+
+[jerry] 13:55:12
+The library, so I think, uh, Kyle and… I think, was it Parker?
+
+[Kaile Suoo] 13:55:18
+Yeah, the image is obvious. Good, we're just working on the Dockerfile.
+
+[jerry] 13:55:18
+They're making progress on that.
+
+[Kaile Suoo] 13:55:24
+But… almost there.
+
+[Marcel (JPL)] 13:55:30
+Okay.
+
+[Marcel (JPL)] 13:55:38
+So, um, are we meeting next week?
+
+[Kaile Suoo] 13:55:42
+Yeah.
+
+[Marcel (JPL)] 13:55:43
+Okay. Let me see, uh…
+
+[Marcel (JPL)] 13:55:53
+Uh… Yeah, next Monday, I might have only 30 minutes, though.
+
+[Marcel (JPL)] 13:55:58
+But it might be fine.
+
+[Kaile Suoo] 13:56:00
+Alright, that's fine, yeah.
+
+[Marcel (JPL)] 13:56:03
+Okay, well, if that's all, then we can stop here.
+
+[Marcel (JPL)] 13:56:10
+Thank you, you… that was really cool, actually. We… Seems that you guys have been doing quite well.
+
+[Patrick Hunt] 13:56:18
+Um, I… not to throw this in at the last minute, but I just have a super quick question, um… Just because the end of the semester's.
+
+[Patrick Hunt] 13:56:26
+getting really close. I just wanted to confirm, um… For what we're expected to have by the end of the semester, um… You're just looking for… a prototype, a basic prototype that does the functions that we…
+
+[Patrick Hunt] 13:56:43
+discussed already many times, and are you looking for some basic benchmarking results between.
+
+[Patrick Hunt] 13:56:50
+llama.cpp and OLama. As well, or…
+
+[Marcel (JPL)] 13:56:54
+I… I think… I think that the… So you're talking about the semester, like, that's gonna end now, right?
+
+[Patrick Hunt] 13:57:00
+Mm-hmm.
+
+[Marcel (JPL)] 13:57:02
+Yeah. So, I'm very flexible as to… so I think you guys need to abide by your own schedule, so I mean, the end goal is that everything is done by the time the project is done.
+
+[Marcel (JPL)] 13:57:12
+So, the internal milestones that you have, I think that they're going to be more, like, up to you. I'm going to be very flexible with that.
+
+[Marcel (JPL)] 13:57:20
+But I think that you need to make sure that you're gonna be in good shape.
+
+[Marcel (JPL)] 13:57:24
+Heading to the end of the project, in that everything, you know, I just want it to be, like.
+
+[Marcel (JPL)] 13:57:30
+Because it's happened in the past that, you know, there's a slow ramp.
+
+[Marcel (JPL)] 13:57:34
+And then there's a lot of rushing at the end.
+
+[Marcel (JPL)] 13:57:36
+So, you guys are grown-ups, and you'll have to figure out how to do it in a way that doesn't happen to you.
+
+[Marcel (JPL)] 13:57:43
+But in terms of having deliverables, I think that, yeah, it would be great to have something tangible.
+
+[Marcel (JPL)] 13:57:48
+But I think that'll let you think about what that is.
+
+[Patrick Hunt] 13:57:53
+Well, thank you.
+
+[Marcel (JPL)] 13:57:55
+Yep. Just, just don't be… Don't be late in the project at the end.
+
+[Marcel (JPL)] 13:58:08
+Okay, is that all?
+
+[Axel Vandenheuvel] 13:58:12
+I believe so, yeah.
+
+[Marcel (JPL)] 13:58:13
+Okay. Well, thank you, everyone.
+
+[Axel Vandenheuvel] 13:58:18
+Yep, thank you.
+
+[Kaile Suoo] 13:58:19
+Thank you.
+
+[Patrick Hunt] 13:58:19
+Thank you. Have a good one. Yeah.
+
+[Marcel (JPL)] 13:58:22
+You too, bye bye.
+
+[Parker] 13:58:23
+Yes.
+
+[peyton] 13:58:31
+And, uh, do you have the transcripts they?
+
+[Kaile Suoo] 13:58:35
+Yeah, I can save it
+

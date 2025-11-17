@@ -1,3 +1,12 @@
+## 11/17/2025 Sponser
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
 ## 11/12/2025 Team
 - [x] Axel VandenHeuvel
 - [x] Jerry Li
@@ -199,6 +208,7 @@
 - [x] Kaile Suoo
 - [x] Patrick Hunt
 - [x] Nathan Khazam
+
 
 
 

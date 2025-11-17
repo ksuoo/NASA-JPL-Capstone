@@ -1,1 +1,6 @@
-admin/
+../admin
+../img
+*.pdf
+*.xlsx
+.gitignore
+.git

@@ -1,4 +1,40 @@
-## 11/17/2025 Sponser
+## 12/3/2025 Team
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
+## 12/1/2025 Sponsor
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
+## 11/20/2025 TA
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
+## 11/19/2025 Team
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
+## 11/17/2025 Sponsor
 - [x] Axel VandenHeuvel
 - [x] Jerry Li
 - [x] Parker Secrest
@@ -208,6 +244,7 @@
 - [x] Kaile Suoo
 - [x] Patrick Hunt
 - [x] Nathan Khazam
+
 
 
 

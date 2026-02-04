@@ -103,6 +103,7 @@ if [[ "$DEV_MODE" == false ]]; then
         cmake \
         git \
         libcurl4-openssl-dev \
+        nlohmann-json3-dev \
         pkg-config \
         > /dev/null 2>&1
 

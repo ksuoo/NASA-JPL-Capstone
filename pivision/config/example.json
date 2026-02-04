@@ -1,0 +1,8 @@
+{
+  "_comment": "Copy this to ~/.config/pivision/config.json and edit paths",
+  "model_path": "/home/YOUR_USER/llama.cpp/models/gemma-3-4b-it-q4_0.gguf",
+  "vision_path": "/home/YOUR_USER/llama.cpp/models/mmproj-model-f16-4B.gguf",
+  "default_image_path": "",
+  "default_n_ctx": 4096,
+  "log_directory": "/home/YOUR_USER/pivision_logs"
+}

@@ -33,7 +33,7 @@ LLAMA_DIR="${LLAMA_DIR:-$HOME/llama.cpp}"
 INSTALL_PREFIX="/usr/local"
 CONFIG_DIR="/etc/pivision"
 USER_CONFIG_DIR="$HOME/.config/pivision"
-REPO_URL="https://github.com/jplpi/pivision.git"
+REPO_URL="https://github.com/ksuoo/NASA-JPL-Capstone.git"
 
 DEV_MODE=false
 if [[ "$1" == "--dev" ]]; then
@@ -55,8 +55,11 @@ if [[ -f "CMakeLists.txt" && -f "src/core.cpp" ]]; then
 else
     PIVISION_DIR="$HOME/pivision"
     if [[ ! -d "$PIVISION_DIR" ]]; then
-        info "Cloning PiVision repository..."
-        git clone --depth 1 "$REPO_URL" "$PIVISION_DIR"
+        info "Cloning repository..."
+        git clone --depth 1 "$REPO_URL" "$HOME/NASA-JPL-Capstone"
+        # PiVision is in a subfolder
+        mv "$HOME/NASA-JPL-Capstone/pivision" "$PIVISION_DIR"
+        rm -rf "$HOME/NASA-JPL-Capstone"
     fi
     cd "$PIVISION_DIR"
     info "Using repo at: $PIVISION_DIR"

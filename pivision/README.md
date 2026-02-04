@@ -7,7 +7,7 @@ PiVision runs vision and language models on Linux using llama.cpp. Optimized for
 ### One-Line Install (Production)
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/jplpi/pivision/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/ksuoo/NASA-JPL-Capstone/main/pivision/install.sh | bash
 ```
 
 This will:

@@ -41,6 +41,13 @@ if [[ "$1" == "--dev" ]]; then
     info "Development mode: skipping system installation"
 fi
 
+# Ensure git is installed (needed for cloning)
+if ! command -v git &> /dev/null; then
+    info "Installing git..."
+    sudo apt-get update -qq
+    sudo apt-get install -y -qq git
+fi
+
 # Determine if we're running from repo or need to clone
 if [[ -f "CMakeLists.txt" && -f "src/core.cpp" ]]; then
     PIVISION_DIR="$(pwd)"

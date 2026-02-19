@@ -1,3 +1,21 @@
+## 2/18/2026 Team
+- [ ] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
+## 2/18/2026 TA
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
 ## 2/11/2026 Team
 - [x] Axel VandenHeuvel
 - [x] Jerry Li

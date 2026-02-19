@@ -52,6 +52,15 @@
 - [x] Patrick Hunt
 - [x] Nathan Khazam
 
+## 2/1/2026 Team
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [x] Nathan Khazam
+
 ## 2/2/2026 Sponsor
 - [x] Axel VandenHeuvel
 - [x] Jerry Li
@@ -80,7 +89,7 @@
 - [x] Nathan Khazam
 
 ## 1/21/2026 TA
-- [ ] Axel VandenHeuvel
+- [x] Axel VandenHeuvel
 - [x] Jerry Li
 - [x] Parker Secrest
 - [x] Peyton Barger

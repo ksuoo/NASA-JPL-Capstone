@@ -1,5 +1,5 @@
 ## 2/18/2026 Team
-- [ ] Axel VandenHeuvel
+- [x] Axel VandenHeuvel
 - [x] Jerry Li
 - [x] Parker Secrest
 - [x] Peyton Barger

@@ -102,6 +102,10 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
     )
 endif()
 
+# ---------- Log-to-CSV scraper (standalone, no llama/pivision) ----------
+add_executable(log_to_csv cmd/log_to_csv.cpp)
+# Uses only C++17 stdlib and filesystem; no pivision/llama dependencies
+
 # ---------- Installation ----------
-install(TARGETS pivision_cli DESTINATION bin)
+install(TARGETS pivision_cli log_to_csv DESTINATION bin)
 install(FILES include/pivision.h DESTINATION include)

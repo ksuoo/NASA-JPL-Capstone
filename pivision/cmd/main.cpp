@@ -16,7 +16,7 @@
 namespace fs = std::filesystem;
 
 // Built-in fallback defaults (Gemma 3 4B)
-static const char * BUILTIN_MODEL  = "/home/jplpi/llama.cpp/models/gemma-3-4b-it-q4_0.gguf";
+static const char * BUILTIN_MODEL  = "/home/jplpi/llama.cpp/models/gemma-3-4b-it-q4_k_m/gemma-3-4b-it-Q4_K_M.gguf";
 static const char * BUILTIN_VISION = "/home/jplpi/llama.cpp/models/mmproj-model-f16-4B.gguf";
 static const int    BUILTIN_N_CTX  = 4096;
 

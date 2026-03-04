@@ -39,7 +39,7 @@ enables JSON output mode. CLI collects all tokens and outputs statistics in a JS
 
 ## Usage Examples
 ```
-# Uses default config model & vision presets
+# Uses default model & vision from config
 pivision --image photo.jpg --prompt "Describe this image."
 
 # Interactive chat

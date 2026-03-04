@@ -5,7 +5,7 @@ Lightweight C++ command line interface (CLI) tool and library enabling VLM (Visi
 
 ## Installation
 
-Docker container
+Installation script 
 
 ## Custom Flags
 `--model <path>`

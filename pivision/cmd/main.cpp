@@ -24,6 +24,7 @@ static const int    BUILTIN_N_CTX  = 4096;
 struct Config {
     std::string model_path;
     std::string vision_path;
+    std::string prompt;
     std::string default_image_path;
     int         default_n_ctx = 0;
     std::string log_directory;
@@ -72,7 +73,7 @@ static int json_get_int(const std::string & json, const std::string & key, int d
 static Config parse_config_file(const fs::path & path) {
     Config cfg;
     std::ifstream f(path);
-    if (!f) return cfg;
+    if (!f) return cfg; //add default paths if no path is provided
 
     std::string json((std::istreambuf_iterator<char>(f)),
                       std::istreambuf_iterator<char>());
@@ -82,6 +83,7 @@ static Config parse_config_file(const fs::path & path) {
     cfg.default_image_path = json_get_string(json, "default_image_path");
     cfg.default_n_ctx = json_get_int(json, "default_n_ctx", 0);
     cfg.log_directory = json_get_string(json, "log_directory");
+    cfg.prompt = json_get_string(json, "prompt");
     cfg.source = path.string();
 
     return cfg;
@@ -118,7 +120,7 @@ static Config load_config(const std::string & explicit_path = "") {
     }
 
     return Config{};  // No config found
-}
+}                                    
 
 static void usage(const char * prog) {
     std::cerr
@@ -510,14 +512,21 @@ int main(int argc, char * argv[]) {
         if (!json_mode) std::cerr << "using config image: " << file_cfg.default_image_path << "\n";
     }
 
-    if (!chat_mode && prompt.empty()) {
+    // if prompt is missing all together and we are not in chat mode
+    if (!chat_mode && (prompt.empty() && file_cfg.prompt.empty())) {
+    
         if (json_mode) {
-            print_json_error("missing required argument: --prompt");
+            print_json_error("missing --prompt argument and json key from config file");
             return 1;
         }
         usage(argv[0]);
         return 1;
     }
+    // if there is no supplied prompt argument but there is a prompt key in the config file
+    else if (!chat_mode && (prompt.empty() && !file_cfg.prompt.empty())){
+        prompt = file_cfg.prompt;
+    }
+    // two other cases are that both are supplied or there is a prompt argument but not a key in the config, in the latter case no action is needed
 
     if (chat_mode && json_mode) {
         std::cerr << "error: --chat and --json cannot be combined\n";

@@ -1,5 +1,5 @@
 {
-  "_comment": "qwen3vl-4b-instruct-Q8_0 test PCat4",
+  "_comment": "qwen3vl-4b-instruct-Q8_0 test PCat4_A",
   "model_path": "/home/jplpi/llama.cpp/models/qwen3vl-4b-instruct-q8_0/Qwen3VL-4B-Instruct-Q8_0.gguf",
   "vision_path": "",
   "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat4/Pcat4_A.jpg",

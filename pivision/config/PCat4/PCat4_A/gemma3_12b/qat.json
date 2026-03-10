@@ -1,5 +1,5 @@
 {
-  "_comment": "gemma-3-12b-it-q4_0 (qat) test PCat4",
+  "_comment": "gemma-3-12b-it-q4_0 (qat) test PCat4_A",
   "model_path": "/home/jplpi/llama.cpp/models/gemma-3-12b-it-qat/gemma-3-12b-it-q4_0.gguf",
   "vision_path": "/home/jplpi/llama.cpp/models/mmproj-model-f16-12B.gguf",
   "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat4/Pcat4_A.jpg",

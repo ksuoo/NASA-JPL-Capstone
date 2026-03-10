@@ -1,8 +1,8 @@
 {
-  "_comment": "gemma3_12b-q8_0 test PCat3C",
+  "_comment": "gemma-3-12b-it-Q8_0 test PCat3_C",
   "model_path": "/home/jplpi/llama.cpp/models/gemma-3-12b-it-q8_0/gemma-3-12b-it-Q8_0.gguf",
   "vision_path": "/home/jplpi/llama.cpp/models/mmproj-model-f16-12B.gguf",
-  "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat3/Pcat3_C.png",
+  "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat3/Pcat3_C.jpg",
   "default_n_ctx": 4096,
   "prompt": "This is the same picture but with a grid on top. Create a geological assessment for each cell. Tell me what instrument we could use in each. Respond in JSON as if you were a spacecraft FSW component.",
   "log_directory": "/home/jplpi/pivision_logs"

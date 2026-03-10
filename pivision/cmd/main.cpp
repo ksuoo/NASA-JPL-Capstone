@@ -465,13 +465,13 @@ int main(int argc, char * argv[]) {
     }
 
     // If prompt looks like a file path and the file exists, read its contents
-    if (!prompt.empty() && fs::is_regular_file(prompt)) {
-        std::ifstream pf(prompt);
-        if (pf) {
-            prompt.assign(std::istreambuf_iterator<char>(pf),
-                          std::istreambuf_iterator<char>());
-        }
-    }
+    // if (!prompt.empty() && fs::is_regular_file(prompt)) {
+    //     std::ifstream pf(prompt);
+    //     if (pf) {
+    //         prompt.assign(std::istreambuf_iterator<char>(pf),
+    //                       std::istreambuf_iterator<char>());
+    //     }
+    // }
 
     // Load config file and apply priority: CLI > config > built-in
     Config file_cfg = load_config(config_path);
@@ -512,6 +512,17 @@ int main(int argc, char * argv[]) {
         if (!json_mode) std::cerr << "using config image: " << file_cfg.default_image_path << "\n";
     }
 
+
+
+
+     if (!prompt.empty() && fs::is_regular_file(prompt)) {
+        std::ifstream pf(prompt);
+        if (pf) {
+            prompt.assign(std::istreambuf_iterator<char>(pf),
+                          std::istreambuf_iterator<char>());
+        }
+    }
+
     // if prompt is missing all together and we are not in chat mode
     if (!chat_mode && (prompt.empty() && file_cfg.prompt.empty())) {
     
@@ -524,9 +535,23 @@ int main(int argc, char * argv[]) {
     }
     // if there is no supplied prompt argument but there is a prompt key in the config file
     else if (!chat_mode && (prompt.empty() && !file_cfg.prompt.empty())){
+
         prompt = file_cfg.prompt;
+        
+         if (fs::is_regular_file(prompt)) {
+        std::ifstream pf(prompt);
+        if (pf) {
+            prompt.assign(std::istreambuf_iterator<char>(pf),
+                          std::istreambuf_iterator<char>());
+        }
+        }
+
     }
     // two other cases are that both are supplied or there is a prompt argument but not a key in the config, in the latter case no action is needed
+
+
+
+
 
     if (chat_mode && json_mode) {
         std::cerr << "error: --chat and --json cannot be combined\n";

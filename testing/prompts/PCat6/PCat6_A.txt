@@ -1,0 +1,1 @@
+Given this image taken by the Mars Curiosity Rover, identify any areas indicating past presence of water.

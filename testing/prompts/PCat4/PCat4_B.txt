@@ -1,0 +1,1 @@
+This is the same image but with a grid on top. For any cells containing damage, rate the damage on a scale from 1 to 5. Cells with a rating of 5 indicate severe damage, and cells with a rating of 1 indicate minimal damage. Respond in JSON as if you were a spacecraft FSW component.

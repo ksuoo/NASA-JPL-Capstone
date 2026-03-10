@@ -1,0 +1,1 @@
+Given this image of the Mars Curiosity rover, please identify and describe any visible damage.

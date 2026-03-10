@@ -1,0 +1,9 @@
+{
+  "_comment": "gemma-3-4b-it-Q8_0 test PCat3_A",
+  "model_path": "/home/jplpi/llama.cpp/models/gemma-3-4b-it-q8_0/gemma-3-4b-it-Q8_0.gguf",
+  "vision_path": "/home/jplpi/llama.cpp/models/mmproj-model-f16-4B.gguf",
+  "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat3/Pcat3_A.jpg",
+  "default_n_ctx": 4096,
+  "prompt": "This is a picture made up of a collection of pictures from JPL\u2019s Curiosity rover. What is your geological assessment?",
+  "log_directory": "/home/jplpi/pivision_logs"
+}

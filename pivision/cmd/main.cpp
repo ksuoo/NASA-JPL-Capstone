@@ -426,7 +426,6 @@ int main(int argc, char * argv[]) {
     bool verbose      = false;
     bool chat_mode    = false;
     bool check_health_mode = false;
-
     static struct option long_opts[] = {
         {"model",        required_argument, nullptr, 'm'},
         {"vision",       required_argument, nullptr, 'v'},
@@ -535,15 +534,17 @@ int main(int argc, char * argv[]) {
     }
     // if there is no supplied prompt argument but there is a prompt key in the config file
     else if (!chat_mode && (prompt.empty() && !file_cfg.prompt.empty())){
-
-        prompt = file_cfg.prompt;
+        std::string filepath = file_cfg.prompt;
+        prompt = "";
         
-         if (fs::is_regular_file(prompt)) {
-        std::ifstream pf(prompt);
+         if (fs::is_regular_file(filepath)) {
+        std::ifstream pf(filepath);
         if (pf) {
             prompt.assign(std::istreambuf_iterator<char>(pf),
                           std::istreambuf_iterator<char>());
         }
+        } else{
+            prompt = file_cfg.prompt;
         }
 
     }

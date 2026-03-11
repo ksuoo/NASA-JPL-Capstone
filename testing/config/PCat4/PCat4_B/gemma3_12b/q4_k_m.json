@@ -4,6 +4,6 @@
   "vision_path": "/home/jplpi/llama.cpp/models/mmproj-model-f16-12B.gguf",
   "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat4/Pcat4_B.jpg",
   "default_n_ctx": 4096,
-  "prompt": "This is the same image but with a grid on top. For any cells containing damage, rate the damage on a scale from 1 to 5. Cells with a rating of 5 indicate severe damage, and cells with a rating of 1 indicate minimal damage. Respond in JSON as if you were a spacecraft FSW component.",
+  "prompt": "This is an image of the Mars Curiosity rover with a grid on top. For any cells containing damage, rate the damage on a scale from 1 to 5. Cells with a rating of 5 indicate severe damage, and cells with a rating of 1 indicate minimal damage. Respond in JSON as if you were a spacecraft FSW component.",
   "log_directory": "/home/jplpi/pivision_logs"
 }

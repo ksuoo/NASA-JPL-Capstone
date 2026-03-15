@@ -1,9 +1,9 @@
 {
   "_comment": "qwen3vl-8b-instruct-Q4_K_M test PCat3_B",
-  "model_path": "/home/jplpi/llama.cpp/models/qwen3vl-8b-instruct-q4_k_m/Qwen3VL-8B-Instruct-Q4_K_M.gguf",
-  "vision_path": "",
-  "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat3/Pcat3_B.jpg",
+  "model_path": "/home/jplpi2/llama.cpp/models/qwen3vl-8b-instruct-q4_k_m/Qwen3VL-8B-Instruct-Q4_K_M.gguf",
+  "vision_path": "/home/jplpi2/llama.cpp/models/qwen3vl-8b-instruct-q8_0/mmproj-Qwen3VL-8B-Instruct-Q8_0.gguf",
+  "default_image_path": "/home/jplpi2/benchmarking/prompt_images/PCat3/Pcat3_B.jpg",
   "default_n_ctx": 4096,
   "prompt": "Knowing the instruments on the Curiosity rover are the following, what do you think are the most important 3 targets visible in the picture we need to investigate?\n\nCameras\n\nMastcam: The Mastcam captures high-resolution color images and video of the Martian landscape.\nMars Hand Lens Imager (MAHLI): The MAHLI is a camera on the rover's robotic arm that provides close-up views of rock and soil textures and minerals.\nMars Descent Imager (MARDI): The MARDI camera took color video of the rover's descent and landing on the Martian surface.\n\nSpectrometers and Analytical Instruments\n\nChemistry & Camera (ChemCam): The ChemCam uses a laser to vaporize parts of rocks and soil from a distance, then analyzes the resulting plasma to determine chemical composition.\nAlpha Particle X-Ray Spectrometer (APXS): The APXS, located on the robotic arm, measures the elemental chemistry of rock and soil samples.\nChemistry & Mineralogy (CheMin): The CheMin uses X-ray diffraction to identify and quantify the minerals in powdered rock and soil samples.\nSample Analysis at Mars (SAM): The SAM instrument is a suite of three instruments that analyze atmospheric and solid samples for organic compounds and key chemical elements.\n\nRadiation Detectors and Environmental Sensors\n\nRadiation Assessment Detector (RAD): The RAD monitors high-energy radiation on Mars to help assess the risks for future human explorers.\nDynamic Albedo of Neutrons (DAN): The DAN instrument searches for signs of water, specifically hydrogen, in the subsurface.\nRover Environmental Monitoring Station (REMS): The REMS is a weather station that provides daily and seasonal reports on Martian atmospheric conditions.",
-  "log_directory": "/home/jplpi/pivision_logs"
+  "log_directory": "/home/jplpi2/pivision_logs"
 }

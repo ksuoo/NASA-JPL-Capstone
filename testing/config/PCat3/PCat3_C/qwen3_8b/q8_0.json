@@ -1,9 +1,9 @@
 {
   "_comment": "qwen3vl-8b-instruct-Q8_0 test PCat3_C",
-  "model_path": "/home/jplpi/llama.cpp/models/qwen3vl-8b-instruct-q8_0/Qwen3VL-8B-Instruct-Q8_0.gguf",
-  "vision_path": "",
-  "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat3/Pcat3_C.jpg",
+  "model_path": "/home/jplpi2/llama.cpp/models/qwen3vl-8b-instruct-q8_0/Qwen3VL-8B-Instruct-Q8_0.gguf",
+  "vision_path": "/home/jplpi2/llama.cpp/models/qwen3vl-8b-instruct-q8_0/mmproj-Qwen3VL-8B-Instruct-Q8_0.gguf",
+  "default_image_path": "/home/jplpi2/benchmarking/prompt_images/PCat3/Pcat3_C.jpg",
   "default_n_ctx": 4096,
   "prompt": "This picture is made up of a collection of pictures from JPL's Curiosity rover with a grid on top. Create a geological assessment for each cell. Tell me what instrument we could use in each. Respond in JSON as if you were a spacecraft FSW component.",
-  "log_directory": "/home/jplpi/pivision_logs"
+  "log_directory": "/home/jplpi2/pivision_logs"
 }

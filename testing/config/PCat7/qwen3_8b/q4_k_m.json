@@ -1,9 +1,9 @@
 {
   "_comment": "qwen3vl-8b-instruct-Q4_K_M test PCat7",
-  "model_path": "/home/jplpi/llama.cpp/models/qwen3vl-8b-instruct-q4_k_m/Qwen3VL-8B-Instruct-Q4_K_M.gguf",
-  "vision_path": "",
-  "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat7/Pcat7_A.jpg",
+  "model_path": "/home/jplpi2/llama.cpp/models/qwen3vl-8b-instruct-q4_k_m/Qwen3VL-8B-Instruct-Q4_K_M.gguf",
+  "vision_path": "/home/jplpi2/llama.cpp/models/qwen3vl-8b-instruct-q8_0/mmproj-Qwen3VL-8B-Instruct-Q8_0.gguf",
+  "default_image_path": "/home/jplpi2/benchmarking/prompt_images/PCat7/Pcat7_A.jpg",
   "default_n_ctx": 4096,
-  "prompt": "Given this image of a vortex near Jupiter’s north pole taken by the Juno spacecraft, identify any targets for further investigation.",
-  "log_directory": "/home/jplpi/pivision_logs"
+  "prompt": "Given this image of a vortex near Jupiter\u2019s north pole taken by the Juno spacecraft, identify any targets for further investigation.",
+  "log_directory": "/home/jplpi2/pivision_logs"
 }

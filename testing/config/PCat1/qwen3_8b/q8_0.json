@@ -1,7 +1,7 @@
 {
   "_comment": "qwen3vl-8b-instruct-Q8_0 test PCat1",
   "model_path": "/home/jplpi2/llama.cpp/models/qwen3vl-8b-instruct-q8_0/Qwen3VL-8B-Instruct-Q8_0.gguf",
-  "vision_path": "/home/jplpi2/llama.cpp/models/qwen3vl-8b-instruct-q8_0/mmproj-Qwen3VL-8B-Instruct-Q8_0.gguf",
+  "vision_path": "/home/jplpi2/llama.cpp/models/mmproj-Qwen3VL-8B-Instruct-Q8_0.gguf",
   "default_image_path": "/home/jplpi2/benchmarking/prompt_images/PCat1/Pcat1_A.jpg",
   "default_n_ctx": 4096,
   "prompt": "Identify potential active volcanoes in this photo of Io, one of Jupiter\u2019s moons",

@@ -157,6 +157,7 @@ struct PiVision::Impl {
         cparams.n_ctx    = static_cast<uint32_t>(config.n_ctx);
         cparams.n_batch  = 512;
         cparams.n_ubatch = 512;
+        cparams.no_perf = false;
 
         ctx = llama_init_from_model(model, cparams);
         if (!ctx) {

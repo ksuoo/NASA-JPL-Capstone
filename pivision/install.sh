@@ -137,6 +137,7 @@ if [[ ! -f "$LLAMA_DIR/build/bin/libllama.so" ]]; then
         -DGGML_CPU_ARM_ARCH=armv8.2-a \
         -DLLAMA_BUILD_EXAMPLES=ON \
         -DLLAMA_BUILD_TOOLS=ON \
+        -DLLAMA_PERF=ON \
         > /dev/null 2>&1
 
     cmake --build . --config Release -j$(nproc) 2>&1 | tail -5

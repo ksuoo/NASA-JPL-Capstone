@@ -2,8 +2,8 @@
   "_comment": "gemma-3-12b-it-Q4_K_M test PCat3_C",
   "model_path": "/home/jplpi/llama.cpp/models/gemma-3-12b-it-q4_k_m/gemma-3-12b-it-Q4_K_M.gguf",
   "vision_path": "/home/jplpi/llama.cpp/models/mmproj-model-f16-12B.gguf",
-  "default_image_path": "/home/jplpi/benchmarking/prompt_images/PCat3/Pcat3_C.jpg",
+  "default_image_path": "/home/jplpi/pivision/testing/images/PCat3/Pcat3_C.png",
   "default_n_ctx": 4096,
-  "prompt": "This picture is made up of a collection of pictures from JPL's Curiosity rover with a grid on top. Create a geological assessment for each cell. Tell me what instrument we could use in each. Respond in JSON as if you were a spacecraft FSW component.",
+  "prompt": "/home/jplpi/pivision/testing/prompts/PCat3/PCat3_C.txt",
   "log_directory": "/home/jplpi/pivision_logs"
 }

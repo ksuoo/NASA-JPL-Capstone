@@ -1,9 +1,0 @@
-{
-  "_comment": "Ministral-3-8B-Reasoning-2512-Q4_K_M test PCat3_C",
-  "model_path": "/home/jplpi2/llama.cpp/models/Ministral-3-8B-Reasoning-2512-Q4_K_M.gguf",
-  "vision_path": "/home/jplpi2/llama.cpp/models/Ministral-3-8B-Reasoning-2512-BF16-mmproj.gguf",
-  "default_image_path": "/home/jplpi2/testing/images/PCat3/Pcat3_C.png",
-  "default_n_ctx": 4096,
-  "prompt": "/home/jplpi2/testing/prompts/PCat3/PCat3_C.txt",
-  "log_directory": "/home/jplpi2/pivision_logs"
-}

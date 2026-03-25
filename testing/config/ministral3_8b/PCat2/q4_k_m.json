@@ -2,8 +2,8 @@
   "_comment": "Ministral-3-8B-Reasoning-2512-Q4_K_M test PCat2",
   "model_path": "/home/jplpi2/llama.cpp/models/Ministral-3-8B-Reasoning-2512-Q4_K_M.gguf",
   "vision_path": "/home/jplpi2/llama.cpp/models/Ministral-3-8B-Reasoning-2512-BF16-mmproj.gguf",
-  "default_image_path": "/home/jplpi2/pivision/testing/images/PCat2/PCat2_A.jpg",
+  "default_image_path": "/home/jplpi2/testing/images/PCat2/PCat2_A.jpg",
   "default_n_ctx": 4096,
-  "prompt": "/home/jplpi2/pivision/testing/prompts/PCat2/PCat2_A.txt",
+  "prompt": "/home/jplpi2/testing/prompts/PCat2/PCat2_A.txt",
   "log_directory": "/home/jplpi2/pivision_logs"
 }

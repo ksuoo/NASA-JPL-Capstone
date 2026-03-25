@@ -2,8 +2,8 @@
   "_comment": "gemma-3-4b-it-Q8_0 test PCat5",
   "model_path": "/home/jplpi/llama.cpp/models/gemma-3-4b-it-q8_0/gemma-3-4b-it-Q8_0.gguf",
   "vision_path": "/home/jplpi/llama.cpp/models/mmproj-model-f16-4B.gguf",
-  "default_image_path": "/home/jplpi/pivision/testing/images/PCat5/PCat5_A.jpg",
+  "default_image_path": "/home/jplpi/testing/images/PCat5/PCat5_A.jpg",
   "default_n_ctx": 4096,
-  "prompt": "/home/jplpi/pivision/testing/prompts/PCat5/PCat5_A.txt",
+  "prompt": "/home/jplpi/testing/prompts/PCat5/PCat5_A.txt",
   "log_directory": "/home/jplpi/pivision_logs"
 }

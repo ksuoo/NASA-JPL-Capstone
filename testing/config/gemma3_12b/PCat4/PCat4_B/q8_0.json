@@ -1,9 +1,0 @@
-{
-  "_comment": "gemma-3-12b-it-Q8_0 test PCat4_B",
-  "model_path": "/home/jplpi/llama.cpp/models/gemma-3-12b-it-q8_0/gemma-3-12b-it-Q8_0.gguf",
-  "vision_path": "/home/jplpi/llama.cpp/models/mmproj-model-f16-12B.gguf",
-  "default_image_path": "/home/jplpi/testing/images/PCat4/Pcat4_B.jpg",
-  "default_n_ctx": 4096,
-  "prompt": "/home/jplpi/testing/prompts/PCat4/PCat4_B.txt",
-  "log_directory": "/home/jplpi/pivision_logs"
-}

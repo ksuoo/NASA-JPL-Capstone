@@ -15,17 +15,17 @@
 
 namespace fs = std::filesystem;
 
-// Gemma 3 4B fallback paths
-static const char *BUILTIN_MODEL  = "/home/jplpi/llama.cpp/models/gemma-3-4b-it-q4_k_m/gemma-3-4b-it-Q4_K_M.gguf";
-static const char *BUILTIN_VISION = "/home/jplpi/llama.cpp/models/mmproj-model-f16-4B.gguf";
-static const int   BUILTIN_N_CTX  = 4096;
+// Gemma3 4B fallback paths
+static const char* BUILTIN_MODEL  = "/home/jplpi/llama.cpp/models/gemma-3-4b-it-q4_k_m/gemma-3-4b-it-Q4_K_M.gguf";
+static const char* BUILTIN_VISION = "/home/jplpi/llama.cpp/models/mmproj-model-f16-4B.gguf";
+static const int BUILTIN_N_CTX  = 4096;
 
 struct Config {
     std::string model_path;
     std::string vision_path;
     std::string prompt;
     std::string default_image_path;
-    int         default_n_ctx = 0;
+    int default_n_ctx = 0;
     std::string log_directory;
     std::string source;
 };
@@ -69,16 +69,15 @@ static Config parse_config_file(const fs::path &path) {
     std::ifstream f(path);
     if (!f) return cfg;
 
-    std::string json((std::istreambuf_iterator<char>(f)),
-                      std::istreambuf_iterator<char>());
+    std::string json((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
 
-    cfg.model_path         = json_get_string(json, "model_path");
-    cfg.vision_path        = json_get_string(json, "vision_path");
+    cfg.model_path = json_get_string(json, "model_path");
+    cfg.vision_path = json_get_string(json, "vision_path");
     cfg.default_image_path = json_get_string(json, "default_image_path");
-    cfg.default_n_ctx      = json_get_int(json, "default_n_ctx", 0);
-    cfg.log_directory      = json_get_string(json, "log_directory");
-    cfg.prompt             = json_get_string(json, "prompt");
-    cfg.source             = path.string();
+    cfg.default_n_ctx = json_get_int(json, "default_n_ctx", 0);
+    cfg.log_directory = json_get_string(json, "log_directory");
+    cfg.prompt = json_get_string(json, "prompt");
+    cfg.source = path.string();
 
     return cfg;
 }
@@ -163,9 +162,7 @@ static void print_json_error(const std::string &msg) {
 
 static std::string g_log_directory;
 
-static void save_log(const std::string &prompt,
-                     const std::vector<std::string> &images,
-                     const RunResult &r)
+static void save_log(const std::string &prompt, const std::vector<std::string> &images, const RunResult &r)
 {
     fs::path log_dir;
     if (!g_log_directory.empty()) {
@@ -382,37 +379,37 @@ static int check_health() {
 int main(int argc, char *argv[]) {
     std::string model, vision, prompt, config_path;
     std::vector<std::string> images;
-    bool json_mode         = false;
-    bool verbose           = false;
-    bool chat_mode         = false;
+    bool json_mode = false;
+    bool verbose = false;
+    bool chat_mode = false;
     bool check_health_mode = false;
 
     static struct option long_opts[] = {
-        {"model",        required_argument, nullptr, 'm'},
-        {"vision",       required_argument, nullptr, 'v'},
-        {"image",        required_argument, nullptr, 'i'},
-        {"prompt",       required_argument, nullptr, 'p'},
-        {"config",       required_argument, nullptr, 'C'},
-        {"chat",         no_argument,       nullptr, 'c'},
-        {"json",         no_argument,       nullptr, 'j'},
-        {"verbose",      no_argument,       nullptr, 'V'},
-        {"check-health", no_argument,       nullptr, 'H'},
-        {"help",         no_argument,       nullptr, 'h'},
+        {"model", required_argument, nullptr, 'm'},
+        {"vision", required_argument, nullptr, 'v'},
+        {"image", required_argument, nullptr, 'i'},
+        {"prompt", required_argument, nullptr, 'p'},
+        {"config", required_argument, nullptr, 'C'},
+        {"chat", no_argument, nullptr, 'c'},
+        {"json", no_argument, nullptr, 'j'},
+        {"verbose", no_argument, nullptr, 'V'},
+        {"check-health", no_argument, nullptr, 'H'},
+        {"help", no_argument, nullptr, 'h'},
         {nullptr, 0, nullptr, 0}
     };
 
     int opt;
     while ((opt = getopt_long(argc, argv, "m:v:i:p:C:cjVHh", long_opts, nullptr)) != -1) {
         switch (opt) {
-            case 'm': model  = optarg;             break;
-            case 'v': vision = optarg;             break;
+            case 'm': model  = optarg; break;
+            case 'v': vision = optarg; break;
             case 'i': images.emplace_back(optarg); break;
-            case 'p': prompt = optarg;             break;
-            case 'C': config_path = optarg;        break;
-            case 'c': chat_mode = true;            break;
-            case 'j': json_mode = true;            break;
-            case 'V': verbose   = true;            break;
-            case 'H': check_health_mode = true;    break;
+            case 'p': prompt = optarg; break;
+            case 'C': config_path = optarg; break;
+            case 'c': chat_mode = true; break;
+            case 'j': json_mode = true; break;
+            case 'V': verbose   = true; break;
+            case 'H': check_health_mode = true; break;
             case 'h': usage(argv[0]); return 0;
             default:  usage(argv[0]); return 1;
         }
@@ -420,14 +417,6 @@ int main(int argc, char *argv[]) {
 
     if (check_health_mode)
         return check_health();
-
-    // if (!prompt.empty() && fs::is_regular_file(prompt)) {
-    //     std::ifstream pf(prompt);
-    //     if (pf) {
-    //         prompt.assign(std::istreambuf_iterator<char>(pf),
-    //                       std::istreambuf_iterator<char>());
-    //     }
-    // }
 
     Config file_cfg = load_config(config_path);
 
@@ -466,8 +455,7 @@ int main(int argc, char *argv[]) {
     if (!prompt.empty() && fs::is_regular_file(prompt)) {
         std::ifstream pf(prompt);
         if (pf)
-            prompt.assign(std::istreambuf_iterator<char>(pf),
-                          std::istreambuf_iterator<char>());
+            prompt.assign(std::istreambuf_iterator<char>(pf), std::istreambuf_iterator<char>());
     }
 
     if (!chat_mode && prompt.empty() && file_cfg.prompt.empty()) {
@@ -482,8 +470,7 @@ int main(int argc, char *argv[]) {
         if (fs::is_regular_file(filepath)) {
             std::ifstream pf(filepath);
             if (pf)
-                prompt.assign(std::istreambuf_iterator<char>(pf),
-                              std::istreambuf_iterator<char>());
+                prompt.assign(std::istreambuf_iterator<char>(pf), std::istreambuf_iterator<char>());
         } else {
             prompt = file_cfg.prompt;
         }
@@ -526,9 +513,9 @@ int main(int argc, char *argv[]) {
 
     try {
         PiVisionConfig cfg;
-        cfg.model_path  = model;
+        cfg.model_path = model;
         cfg.vision_path = vision;
-        cfg.verbose     = verbose;
+        cfg.verbose = verbose;
 
         PiVision pv(cfg);
 
@@ -622,7 +609,7 @@ int main(int argc, char *argv[]) {
                 std::string err = pv.validate(images);
                 if (!err.empty()) {
                     if (json_mode) print_json_error(err);
-                    else           std::cerr << "error: " << err << "\n";
+                    else std::cerr << "error: " << err << "\n";
                     return 1;
                 }
                 for (size_t idx = 0; idx < images.size(); ++idx) {
@@ -630,7 +617,7 @@ int main(int argc, char *argv[]) {
                     if (!pv.load_image(img)) {
                         std::string msg = "failed to load image: " + img;
                         if (json_mode) print_json_error(msg);
-                        else           std::cerr << msg << "\n";
+                        else std::cerr << msg << "\n";
                         return 1;
                     }
                     if (verbose)
@@ -650,7 +637,7 @@ int main(int argc, char *argv[]) {
 
     } catch (const std::exception &e) {
         if (json_mode) print_json_error(e.what());
-        else           std::cerr << "error: " << e.what() << "\n";
+        else std::cerr << "error: " << e.what() << "\n";
         return 1;
     }
 

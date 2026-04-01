@@ -31,16 +31,13 @@ static bool is_valid_image_format(const std::string &path) {
     f.read(reinterpret_cast<char *>(hdr), 4);
     if (!f) return false;
 
-    if (hdr[0] == 0xFF && hdr[1] == 0xD8 && hdr[2] == 0xFF) return true; // JPEG
-    if (hdr[0] == 0x89 && hdr[1] == 0x50 && hdr[2] == 0x4E && hdr[3] == 0x47) return true; // PNG
+    if (hdr[0] == 0xFF && hdr[1] == 0xD8 && hdr[2] == 0xFF) return true; // jpg
+    if (hdr[0] == 0x89 && hdr[1] == 0x50 && hdr[2] == 0x4E && hdr[3] == 0x47) return true; // png
     return false;
 }
 
-// Formats a single-shot user prompt using the model's embedded chat template.
-static std::string format_chat_prompt(const char *chat_template,
-                                      const std::string &user_prompt,
-                                      int n_images,
-                                      const std::string &media_marker) {
+// Formats a single-shot user prompt using the model's embedded chat template
+static std::string format_chat_prompt(const char *chat_template, const std::string &user_prompt, int n_images, const std::string &media_marker) {
     std::string content;
     content.reserve(256 + user_prompt.size());
 
@@ -66,11 +63,11 @@ static std::string format_chat_prompt(const char *chat_template,
 struct PiVision::Impl {
     PiVisionConfig config;
 
-    llama_model       *model    = nullptr;
-    llama_context     *ctx      = nullptr;
-    const llama_vocab *vocab    = nullptr;
-    mtmd_context      *mtmd_ctx = nullptr;
-    llama_sampler     *sampler  = nullptr;
+    llama_model *model = nullptr;
+    llama_context *ctx = nullptr;
+    const llama_vocab *vocab = nullptr;
+    mtmd_context *mtmd_ctx = nullptr;
+    llama_sampler *sampler = nullptr;
 
     std::vector<mtmd::bitmap> bitmaps;
     std::string model_desc;
@@ -108,10 +105,10 @@ struct PiVision::Impl {
         tmpls = common_chat_templates_init(model, "");
 
         llama_context_params cparams = llama_context_default_params();
-        cparams.n_ctx    = static_cast<uint32_t>(config.n_ctx);
-        cparams.n_batch  = 512;
+        cparams.n_ctx = static_cast<uint32_t>(config.n_ctx);
+        cparams.n_batch = 512;
         cparams.n_ubatch = 512;
-        cparams.no_perf  = false;
+        cparams.no_perf = false;
 
         ctx = llama_init_from_model(model, cparams);
         if (!ctx)
@@ -119,24 +116,23 @@ struct PiVision::Impl {
 
         if (!config.vision_path.empty()) {
             mtmd_context_params mp = mtmd_context_params_default();
-            mp.use_gpu       = false;
-            mp.n_threads     = 4;
+            mp.use_gpu = false;
+            mp.n_threads = 4;
             mp.print_timings = false;
 
             mtmd_ctx = mtmd_init_from_file(config.vision_path.c_str(), model, mp);
             if (!mtmd_ctx)
-                throw std::runtime_error("pivision: failed to load vision projector from "
-                                         + config.vision_path);
+                throw std::runtime_error("pivision: failed to load vision projector from " + config.vision_path);
         }
 
         build_sampler();
     }
 
     ~Impl() {
-        if (sampler)  llama_sampler_free(sampler);
+        if (sampler) llama_sampler_free(sampler);
         if (mtmd_ctx) mtmd_free(mtmd_ctx);
-        if (ctx)      llama_free(ctx);
-        if (model)    llama_model_free(model);
+        if (ctx) llama_free(ctx);
+        if (model) llama_model_free(model);
         llama_backend_free();
     }
 
@@ -176,14 +172,14 @@ struct PiVision::Impl {
         return true;
     }
 
-    // Tokenise and eval a formatted prompt. Pass add_bos=true for the first turn.
+    // Tokenize and eval a formatted prompt. Pass add_bos=true for the first turn
     void eval_prompt(const std::string &formatted, bool add_bos) {
         const int n_images = static_cast<int>(bitmaps.size());
 
         if (n_images > 0 && mtmd_ctx) {
             mtmd_input_text text;
-            text.text          = formatted.c_str();
-            text.add_special   = add_bos;
+            text.text = formatted.c_str();
+            text.add_special = add_bos;
             text.parse_special = true;
 
             mtmd::input_chunks chunks(mtmd_input_chunks_init());
@@ -193,30 +189,26 @@ struct PiVision::Impl {
             for (auto &b : bitmaps)
                 bmp_ptrs.push_back(b.ptr.get());
 
-            int32_t tok_res = mtmd_tokenize(mtmd_ctx, chunks.ptr.get(),
-                                            &text, bmp_ptrs.data(), bmp_ptrs.size());
+            int32_t tok_res = mtmd_tokenize(mtmd_ctx, chunks.ptr.get(), &text, bmp_ptrs.data(), bmp_ptrs.size());
             if (tok_res != 0)
-                throw std::runtime_error("pivision: mtmd_tokenize failed (code "
-                                         + std::to_string(tok_res) + ")");
+                throw std::runtime_error("pivision: mtmd_tokenize failed (code " + std::to_string(tok_res) + ")");
 
             bitmaps.clear();
 
             llama_pos new_n_past = 0;
-            int32_t eval_res = mtmd_helper_eval_chunks(mtmd_ctx, ctx, chunks.ptr.get(),
-                                                       n_past, 0, 512, true, &new_n_past);
+            int32_t eval_res = mtmd_helper_eval_chunks(mtmd_ctx, ctx, chunks.ptr.get(), n_past, 0, 512, true, &new_n_past);
+
             if (eval_res != 0)
-                throw std::runtime_error("pivision: mtmd_helper_eval_chunks failed (code "
-                                         + std::to_string(eval_res) + ")");
+                throw std::runtime_error("pivision: mtmd_helper_eval_chunks failed (code " + std::to_string(eval_res) + ")");
 
             n_past = new_n_past;
         } else {
             std::vector<llama_token> tokens(formatted.size() + 64);
-            int n = llama_tokenize(vocab, formatted.c_str(), formatted.size(),
-                                   tokens.data(), tokens.size(), add_bos, true);
+            int n = llama_tokenize(vocab, formatted.c_str(), formatted.size(), tokens.data(), tokens.size(), add_bos, true);
+
             if (n < 0) {
                 tokens.resize(-n);
-                n = llama_tokenize(vocab, formatted.c_str(), formatted.size(),
-                                   tokens.data(), tokens.size(), add_bos, true);
+                n = llama_tokenize(vocab, formatted.c_str(), formatted.size(), tokens.data(), tokens.size(), add_bos, true);
             }
             tokens.resize(n);
 
@@ -254,9 +246,8 @@ struct PiVision::Impl {
         return content;
     }
 
-    void run_inner(const std::string &prompt,
-                   std::function<void(const std::string &)> stream_cb,
-                   RunResult &out) {
+    void run_inner(const std::string &prompt, std::function<void(const std::string &)> stream_cb, RunResult &out) {
+
         namespace chr = std::chrono;
         auto wall_start = chr::steady_clock::now();
 
@@ -278,8 +269,7 @@ struct PiVision::Impl {
 
         auto wrapped_cb = [&](const std::string &piece) {
             if (!ttft_recorded) {
-                ttft_ms = chr::duration<double, std::milli>(
-                    chr::steady_clock::now() - ttft_start).count();
+                ttft_ms = chr::duration<double, std::milli>(chr::steady_clock::now() - ttft_start).count();
                 ttft_recorded = true;
             }
             if (stream_cb) stream_cb(piece);
@@ -290,23 +280,22 @@ struct PiVision::Impl {
         auto wall_end = chr::steady_clock::now();
         auto perf = llama_perf_context(ctx);
 
-        out.model_desc       = model_desc;
+        out.model_desc = model_desc;
         out.images_processed = n_images;
-        out.prompt_tokens    = perf.n_p_eval;
-        out.gen_tokens       = perf.n_eval;
-        out.total_tokens     = perf.n_p_eval + perf.n_eval;
-        out.prompt_ms        = perf.t_p_eval_ms;
-        out.gen_ms           = perf.t_eval_ms;
-        out.ttft_ms          = ttft_ms;
-        out.wall_ms          = chr::duration<double, std::milli>(wall_end - wall_start).count();
+        out.prompt_tokens = perf.n_p_eval;
+        out.gen_tokens = perf.n_eval;
+        out.total_tokens = perf.n_p_eval + perf.n_eval;
+        out.prompt_ms = perf.t_p_eval_ms;
+        out.gen_ms = perf.t_eval_ms;
+        out.ttft_ms = ttft_ms;
+        out.wall_ms = chr::duration<double, std::milli>(wall_end - wall_start).count();
 
-        double gen_sec     = perf.t_eval_ms / 1000.0;
+        double gen_sec = perf.t_eval_ms / 1000.0;
         out.tokens_per_sec = gen_sec > 0.0 ? static_cast<double>(perf.n_eval) / gen_sec : 0.0;
     }
 
-    void chat_turn_inner(const std::string &user_message,
-                         std::function<void(const std::string &)> stream_cb,
-                         RunResult &out) {
+    void chat_turn_inner(const std::string &user_message, std::function<void(const std::string &)> stream_cb, RunResult &out) {
+
         namespace chr = std::chrono;
         auto wall_start = chr::steady_clock::now();
 
@@ -322,7 +311,7 @@ struct PiVision::Impl {
         content += user_message;
 
         common_chat_msg user_msg;
-        user_msg.role    = "user";
+        user_msg.role = "user";
         user_msg.content = content;
 
         std::string formatted = common_chat_format_single(
@@ -338,8 +327,7 @@ struct PiVision::Impl {
 
         auto wrapped_cb = [&](const std::string &piece) {
             if (!ttft_recorded) {
-                ttft_ms = chr::duration<double, std::milli>(
-                    chr::steady_clock::now() - ttft_start).count();
+                ttft_ms = chr::duration<double, std::milli>(chr::steady_clock::now() - ttft_start).count();
                 ttft_recorded = true;
             }
             if (stream_cb) stream_cb(piece);
@@ -350,23 +338,23 @@ struct PiVision::Impl {
         auto wall_end = chr::steady_clock::now();
 
         common_chat_msg asst_msg;
-        asst_msg.role    = "assistant";
+        asst_msg.role = "assistant";
         asst_msg.content = out.content;
         chat_history.push_back(asst_msg);
 
         auto perf = llama_perf_context(ctx);
 
-        out.model_desc       = model_desc;
+        out.model_desc = model_desc;
         out.images_processed = n_images;
-        out.prompt_tokens    = perf.n_p_eval;
-        out.gen_tokens       = perf.n_eval;
-        out.total_tokens     = perf.n_p_eval + perf.n_eval;
-        out.prompt_ms        = perf.t_p_eval_ms;
-        out.gen_ms           = perf.t_eval_ms;
-        out.ttft_ms          = ttft_ms;
-        out.wall_ms          = chr::duration<double, std::milli>(wall_end - wall_start).count();
+        out.prompt_tokens = perf.n_p_eval;
+        out.gen_tokens = perf.n_eval;
+        out.total_tokens = perf.n_p_eval + perf.n_eval;
+        out.prompt_ms = perf.t_p_eval_ms;
+        out.gen_ms = perf.t_eval_ms;
+        out.ttft_ms = ttft_ms;
+        out.wall_ms = chr::duration<double, std::milli>(wall_end - wall_start).count();
 
-        double gen_sec     = perf.t_eval_ms / 1000.0;
+        double gen_sec = perf.t_eval_ms / 1000.0;
         out.tokens_per_sec = gen_sec > 0.0 ? static_cast<double>(perf.n_eval) / gen_sec : 0.0;
     }
 
@@ -392,8 +380,7 @@ bool PiVision::load_image(const std::string &path) {
     return impl_->load_image(path);
 }
 
-void PiVision::run(const std::string &prompt,
-                   std::function<void(const std::string &)> stream_cb) {
+void PiVision::run(const std::string &prompt, std::function<void(const std::string &)> stream_cb) {
     RunResult unused;
     impl_->run_inner(prompt, std::move(stream_cb), unused);
 }
@@ -404,8 +391,7 @@ RunResult PiVision::run_collect(const std::string &prompt) {
     return result;
 }
 
-RunResult PiVision::chat_turn(const std::string &user_message,
-                               std::function<void(const std::string &)> stream_cb) {
+RunResult PiVision::chat_turn(const std::string &user_message, std::function<void(const std::string &)> stream_cb) {
     RunResult result;
     impl_->chat_turn_inner(user_message, std::move(stream_cb), result);
     return result;

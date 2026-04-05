@@ -1,3 +1,30 @@
+## 4/1/2026 Team
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [X] Nathan Khazam
+
+## 4/1/2026 TA
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [X] Nathan Khazam
+
+## 3/30/2026 Sponsor
+- [x] Axel VandenHeuvel
+- [x] Jerry Li
+- [x] Parker Secrest
+- [x] Peyton Barger
+- [x] Kaile Suoo
+- [x] Patrick Hunt
+- [X] Nathan Khazam
+
 ## 3/29/2026 Team
 - [x] Axel VandenHeuvel
 - [x] Jerry Li

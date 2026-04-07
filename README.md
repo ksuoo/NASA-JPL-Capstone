@@ -5,37 +5,39 @@ Lightweight C++ command line interface (CLI) tool and library enabling VLM (Visi
 
 ## Installation
 
-Installation script 
+Run the installation script located at: pivision/install.sh.
+More info on running that within the pivision folder.
 
 ## Custom Flags
 `--model <path>`
-uses a GGUF LLM model from the selected path.
+- Uses a GGUF LLM model from the selected path.
 
 `--vision <path>`
-uses a GGUF VLM model from the selected path.
+- Uses a GGUF VLM model from the selected path.
 
 `--image <path>`
-attaches an image from the selected path. Multiple images can be loaded in a single call. 
+- Attaches an image from the selected path. Multiple images can be loaded in a single call. 
 
 `--prompt <str>`
-prompts the model using the attached string.
+- Prompts the model using the attached string.
 
 `--chat`
-enables interactive chat mode with the model. Can be combined with `--prompt` to process an initial image before interaction.
+- Enables interactive chat mode with the model. Can be combined with `--prompt` to process an initial image before interaction.
 
 `--verbose`
-outputs model benchmark statistics to stderr after each response.
+- Outputs model benchmark statistics to stderr after each response.
 ```
 <Example output>
 ```
 
 `--json`
-enables JSON output mode. CLI collects all tokens and outputs statistics in a JSON object. 
+- Enables JSON output mode. CLI collects all tokens and outputs statistics in a JSON object. 
 ```
 <Example response>
 ```
 
-`--check-health` determines system readiness based on hardware availability/usage.
+`--check-health` 
+- Determines system readiness based on hardware availability/usage.
 
 ## Usage Examples
 ```

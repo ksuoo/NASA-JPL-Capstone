@@ -1,7 +1,4 @@
 // log_to_csv.cpp – Scrape PiVision session log directory and export to CSV.
-// Standalone: no dependency on pivision library or llama.cpp.
-// Usage: log_to_csv [--log-dir <path>] [--config <path>] [--output <file.csv>]
-
 #include <algorithm>
 #include <cstdlib>
 #include <filesystem>
@@ -12,10 +9,6 @@
 #include <vector>
 
 namespace fs = std::filesystem;
-
-// ---------------------------------------------------------------------------
-// Config / log directory (same priority as pivision main)
-// ---------------------------------------------------------------------------
 
 static std::string json_get_string(const std::string& json, const std::string& key) {
     std::string pattern = "\"" + key + "\"";
@@ -59,7 +52,7 @@ static std::string resolve_log_dir(const std::string& explicit_log_dir,
     if (!explicit_log_dir.empty()) return explicit_log_dir;
     std::string from_config = load_log_directory_from_config(config_path);
     if (!from_config.empty()) return from_config;
-    // Try config in standard locations
+    
     if (config_path.empty()) {
         if (fs::exists("./pivision.json"))
             from_config = load_log_directory_from_config("./pivision.json");
@@ -81,15 +74,11 @@ static std::string resolve_log_dir(const std::string& explicit_log_dir,
     return get_default_log_dir();
 }
 
-// ---------------------------------------------------------------------------
-// Parsed session record (matches save_log() format in main.cpp)
-// ---------------------------------------------------------------------------
-
 struct SessionRecord {
     std::string timestamp;
     std::string model_description;
     int         images_processed = 0;
-    std::string image_paths;      // semicolon-separated
+    std::string image_paths;
     std::string prompt;
     double      tokens_per_sec    = 0.0;
     int         prompt_tokens     = 0;
@@ -102,7 +91,6 @@ struct SessionRecord {
     std::string response;
 };
 
-// Trim leading/trailing whitespace
 static std::string trim(const std::string& s) {
     size_t start = s.find_first_not_of(" \t\r\n");
     if (start == std::string::npos) return "";
@@ -110,7 +98,6 @@ static std::string trim(const std::string& s) {
     return s.substr(start, end == std::string::npos ? std::string::npos : end - start + 1);
 }
 
-// Parse "Key: value" line; returns value or empty (handles leading spaces)
 static std::string parse_value_line(const std::string& line, const std::string& key) {
     std::string t = trim(line);
     if (t.size() < key.size() + 1) return "";
@@ -139,7 +126,6 @@ static bool parse_int(const std::string& s, int& out) {
     }
 }
 
-// Parse one session log file into a record. Returns false on critical parse failure.
 static bool parse_log_file(const fs::path& path, SessionRecord& out) {
     std::ifstream f(path);
     if (!f) return false;
@@ -162,12 +148,14 @@ static bool parse_log_file(const fs::path& path, SessionRecord& out) {
             in_response = false;
             continue;
         }
+        
         if (trimmed == "[IMAGES]") {
             section = Images;
             in_prompt = false;
             in_response = false;
             continue;
         }
+        
         if (trimmed == "[PROMPT]") {
             section = Prompt;
             prompt_accum.str("");
@@ -176,12 +164,14 @@ static bool parse_log_file(const fs::path& path, SessionRecord& out) {
             in_response = false;
             continue;
         }
+        
         if (trimmed == "[PERFORMANCE]") {
             section = Performance;
             in_prompt = false;
             in_response = false;
             continue;
         }
+        
         if (trimmed == "[RESPONSE]") {
             section = Response;
             response_accum.str("");
@@ -208,7 +198,6 @@ static bool parse_log_file(const fs::path& path, SessionRecord& out) {
         }
 
         if (section == Images) {
-            // Lines like "  1. /path/to/img.png"
             if (trimmed.empty()) continue;
             size_t dot = trimmed.find('.');
             if (dot != std::string::npos) {
@@ -223,7 +212,7 @@ static bool parse_log_file(const fs::path& path, SessionRecord& out) {
 
         if (in_prompt) {
             if (trimmed.empty() && prompt_accum.str().size() > 0)
-                continue; // keep reading until we hit [PERFORMANCE] or next section
+                continue;
             if (trimmed.find('[') == 0) {
                 in_prompt = false;
                 section = None;
@@ -245,7 +234,6 @@ static bool parse_log_file(const fs::path& path, SessionRecord& out) {
             else if (!(v = parse_value_line(line, "Total tokens")).empty())
                 parse_int(v, out.total_tokens);
             else if (!(v = parse_value_line(line, "Prompt eval time")).empty()) {
-                // "123.4 ms"
                 size_t sp = v.find(' ');
                 if (sp != std::string::npos) v = v.substr(0, sp);
                 parse_double(v, out.prompt_ms);
@@ -278,7 +266,6 @@ static bool parse_log_file(const fs::path& path, SessionRecord& out) {
     return true;
 }
 
-// Escape a CSV field: wrap in quotes, double internal quotes.
 static std::string csv_escape(const std::string& s) {
     std::string out;
     out.reserve(s.size() + 2);
@@ -292,7 +279,6 @@ static std::string csv_escape(const std::string& s) {
     return out;
 }
 
-// Write one row of CSV (all fields escaped for safety).
 static void write_csv_row(std::ostream& out, const SessionRecord& r) {
     out << csv_escape(r.timestamp)
         << "," << csv_escape(r.model_description)
@@ -329,20 +315,24 @@ int main(int argc, char* argv[]) {
 
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
+        
         if (arg == "--help" || arg == "-h") {
             usage(argv[0]);
             return 0;
         }
+        
         if (arg == "--log-dir" || arg == "-l") {
             if (i + 1 >= argc) { std::cerr << "error: --log-dir requires an argument\n"; return 1; }
             log_dir = argv[++i];
             continue;
         }
+        
         if (arg == "--config" || arg == "-C") {
             if (i + 1 >= argc) { std::cerr << "error: --config requires an argument\n"; return 1; }
             config_path = argv[++i];
             continue;
         }
+        
         if (arg == "--output" || arg == "-o") {
             if (i + 1 >= argc) { std::cerr << "error: --output requires an argument\n"; return 1; }
             output_path = argv[++i];
@@ -395,7 +385,6 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Header row
     csv << "timestamp,model_description,images_processed,image_paths,prompt,"
         << "tokens_per_sec,prompt_tokens,gen_tokens,total_tokens,"
         << "prompt_ms,gen_ms,ttft_ms,wall_sec,response\n";

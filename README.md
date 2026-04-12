@@ -3,10 +3,11 @@
 
 Lightweight C++ command line interface (CLI) tool and library enabling VLM (Vision Language Model) inference on Linux ARM64/x86_64, backed by [llama.cpp](https://github.com/ggml-org/llama.cpp).
 
-## Installation
+## Installation & Set Up
 
-Run the installation script located at: pivision/install.sh.
-More info on running that within the pivision folder.
+1. Run the installation script located at: pivision/install.sh. 
+2. Upload your models and projectors to the directory llama.cpp/models
+3. Run config_script.sh in testing/scripts to generate the configuration files to benchmark using the preset use cases.
 
 ## Custom Flags
 `--model <path>`

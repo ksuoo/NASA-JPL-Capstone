@@ -1,0 +1,9 @@
+{
+  "comment": "gemma-3-12b-it-Q4_K_M PCat7_A",
+  "model_path": "../../llama.cpp/models/gemma-3-12b-it-Q4_K_M/model/gemma-3-12b-it-Q4_K_M.gguf",
+  "vision_path": "../../llama.cpp/models/gemma-3-12b-it-Q4_K_M/mmproj/mmproj-BF16.gguf",
+  "default_image_path": "../../testing/images/PCat7/PCat7_A.jpg",
+  "default_n_ctx": 4096,
+  "prompt": "../../testing/prompts/PCat7/PCat7_A.txt",
+  "log_directory": "../../pivision_logs/gemma-3-12b-it-Q4_K_M/PCat7_A"
+}

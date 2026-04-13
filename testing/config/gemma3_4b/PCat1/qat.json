@@ -1,9 +1,0 @@
-{
-  "_comment": "gemma-3-4b-it-q4_0 (qat) test PCat1",
-  "model_path": "/home/jplpi/llama.cpp/models/gemma-3-4b-it-qat/gemma-3-4b-it-q4_0.gguf",
-  "vision_path": "/home/jplpi/llama.cpp/models/mmproj-model-f16-4B.gguf",
-  "default_image_path": "/home/jplpi/testing/images/PCat1/PCat1_A.jpg",
-  "default_n_ctx": 4096,
-  "prompt": "/home/jplpi/testing/prompts/PCat1/PCat1_A.txt",
-  "log_directory": "/home/jplpi/pivision_logs"
-}

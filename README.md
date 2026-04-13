@@ -54,3 +54,20 @@ pivision --chat --image photo.jpg --prompt "What's in this image?"
 # Health check
 pivision --check-health
 ```
+
+## Testing
+
+Bash scripts are provided to help run prompt/image test cases across models
+
+Detailed testing documentation can be found in [testing/README.md](testing/READMEmd).
+
+### Quick Start
+Download the desired models and their mmproj files, and store them in:
+- 'llama.cpp/models/{model_name}/model'
+- 'llama.cpp/models/{model_name}/mmproj'
+
+Then run:
+```bash
+cd testing/scripts
+./config_script.sh #generates JSON config files for each selected model
+./test_all.sh #runs all generated config files for each selected model

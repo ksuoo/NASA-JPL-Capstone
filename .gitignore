@@ -1,0 +1,31 @@
+# Build artifacts
+pivision/build/
+pivision/*.o
+pivision*.a
+pivision/*.so
+pivision/*.dylib
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (generated at runtime)
+*.log
+pivision_logs/
+
+# Models (too large for git)
+*.gguf
+
+# CMake
+pivision/CMakeCache.txt
+pivision/CMakeFiles/
+pivision/cmake_install.cmake
+pivision/Makefile
+pivision/compile_commands.json

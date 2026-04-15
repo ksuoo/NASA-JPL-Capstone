@@ -59,7 +59,7 @@ pivision --check-health
 
 Bash scripts are provided to help run prompt/image test cases across models
 
-Detailed testing documentation can be found in [testing/README.md](testing/READMEmd).
+Detailed testing documentation can be found in [testing/README.md](testing/README.md).
 
 ### Quick Start
 Download the desired models and their mmproj files, and store them in:

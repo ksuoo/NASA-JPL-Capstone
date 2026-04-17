@@ -4,5 +4,5 @@
   "vision_path": "path/to/mmproj.gguf",
   "default_image_path": "path/to/image.jpg",
   "default_n_ctx": 4096,
-  "log_directory": path/to/log_directory"
+  "log_directory": "path/to/log_directory"
 }

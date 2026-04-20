@@ -10,35 +10,27 @@ Lightweight C++ command line interface (CLI) tool and library enabling VLM (Visi
 3. Run config_script.sh in testing/scripts to generate the configuration files to benchmark using the preset use cases.
 
 ## Custom Flags
-`--model <path>`
-- Uses a GGUF LLM model from the selected path.
+`--model <path>`  Uses a GGUF LLM model from the selected path.
 
-`--vision <path>`
-- Uses a GGUF VLM model from the selected path.
+`--vision <path>`  Uses a GGUF VLM model from the selected path.
 
-`--image <path>`
-- Attaches an image from the selected path. Multiple images can be loaded in a single call. 
+`--image <path>`  Attaches an image from the selected path. Multiple images can be loaded in a single call. 
 
-`--prompt <str>`
-- Prompts the model using the attached string.
+`--prompt <str>`  Prompts the model using the attached string.
 
-`--chat`
-- Enables interactive chat mode with the model. Can be combined with `--prompt` to process an initial image before interaction.
+`--chat`  Enables interactive chat mode with the model. Can be combined with `--prompt` to process an initial image before interaction.
 
-`--verbose`
-- Outputs model benchmark statistics to stderr after each response.
+`--verbose`  Outputs model benchmark statistics to stderr after each response.
 ```
 <Example output>
 ```
 
-`--json`
-- Enables JSON output mode. CLI collects all tokens and outputs statistics in a JSON object. 
+`--json`  Enables JSON output mode. CLI collects all tokens and outputs statistics in a JSON object. 
 ```
 <Example response>
 ```
 
-`--check-health` 
-- Determines system readiness based on hardware availability/usage.
+`--check-health`   Determines system readiness based on hardware availability/usage.
 
 ## Usage Examples
 ```

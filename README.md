@@ -35,7 +35,20 @@ Lightweight C++ command line interface (CLI) tool and library enabling VLM (Visi
 
 `--json`  Enables JSON output mode. CLI collects all tokens and outputs statistics in a JSON object. 
 ```
-<Example response>
+{
+  "content": "Hello! 😊 How can I help you today?",
+  "metadata": {
+    "model": "mistral3 3B Q4_K - Medium",
+    "images_processed": 0,
+    "prompt_tokens": 4,
+    "gen_tokens": 12,
+    "total_tokens": 16,
+    "tokens_per_sec": 1.6,
+    "ttft_ms": 1,
+    "wall_time_sec": 8.7
+  }
+}
+
 ```
 
 `--check-health`   Determines system readiness based on hardware availability/usage.

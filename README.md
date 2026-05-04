@@ -22,7 +22,15 @@ Lightweight C++ command line interface (CLI) tool and library enabling VLM (Visi
 
 `--verbose`  Outputs model benchmark statistics to stderr after each response.
 ```
-<Example output>
+--- stats -----------------------------------------------
+  model:          mistral3 3B Q4_K - Medium
+  images:         0
+  prompt tokens:  4  (1139.7 ms, 3.5 tok/s)
+  gen tokens:     12  (9199.5 ms, 1.3 tok/s)
+  ttft:           2 ms
+  wall time:      10.4 s
+---------------------------------------------------------
+
 ```
 
 `--json`  Enables JSON output mode. CLI collects all tokens and outputs statistics in a JSON object. 
